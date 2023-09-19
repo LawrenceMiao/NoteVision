@@ -10,3 +10,4 @@ The following three videos by *3Blue1Brown* to get an understanding of what neur
 - [Chapter 3 | What is backpropagation really doing?](https://youtu.be/Ilg3gGewQ5U?si=7DkytDDaGr3OIsuv)
 
 Backpropagation is the algorithm for computing the gradient descent.
+WHAT
