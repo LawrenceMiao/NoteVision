@@ -4,5 +4,7 @@ This README.md contains the documentation process of what I learned throughout t
 
 ## Neural Networks
 1. [Chapter 1](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
-2. [Chapter 1](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
-3. [Chapter 1](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
+2. [Chapter 2](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
+3. [Chapter 3](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
+
+Number Number AI Learning 
