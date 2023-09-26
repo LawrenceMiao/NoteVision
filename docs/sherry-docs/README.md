@@ -33,7 +33,8 @@ I explored multiple sources listed below to learn more about Python that Compute
 I learned that:
 
 - Python inheritance allows programmers to create child clases that inherit methods and properties from parent classes and allows child classes to override inherited methods. 
-- Dunder methods let class objects interact with built-in functions, keywords, and operators of Python. 
+- Dunder methods let class objects interact with built-in functions, keywords, and operators of Python. g
 - Python provides various handling functions including "open()", ".read()", ".readline()", ".close()", ".write()", ".remove()", and more. 
-- NumPy is a Python library used for working with arrays and matrices and includes high-level mathematical functions.
+- NumPy is a Python library used for working with ar
+rays and matrices and includes high-level mathematical functions.
 - Pillow is a Python library that lets programmers work with and manipulate images.
