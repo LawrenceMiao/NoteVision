@@ -1,7 +1,7 @@
 # Note Vision Documentation - Sherry Lin
- This file documents my learning process while working on NoteVision.
+ This file documents my learning process and my contributions while working on NoteVision.
 
-  Note Vision is an AI tool designed to help enable musicians and composers to transform physical sheet music to a MIDI file.
+Note Vision is an AI tool designed to help enable musicians and composers to transform physical sheet music to a MIDI file.
 
 ## Introduction to Neural Networks and Deep Learning
 
@@ -19,7 +19,7 @@ Some key points are:
 
 ## Expanding Python Knowledge
 
-I explored multiple sources listed below to learn more about Python that I did not know beforehand. Topics include classes, files, NumPy, and Pillow. 
+I explored multiple sources listed below to learn more about Python that Computer Science 1 did not cover. Topics include classes, files, NumPy, and Pillow. 
 
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
@@ -32,4 +32,8 @@ I explored multiple sources listed below to learn more about Python that I did n
 
 I learned that:
 
-- Help
+- Python inheritance allows programmers to create child clases that inherit methods and properties from parent classes and allows child classes to override inherited methods. 
+- Dunder methods let class objects interact with built-in functions, keywords, and operators of Python. 
+- Python provides various handling functions including "open()", ".read()", ".readline()", ".close()", ".write()", ".remove()", and more. 
+- NumPy is a Python library used for working with arrays and matrices and includes high-level mathematical functions.
+- Pillow is a Python library that lets programmers work with and manipulate images.
