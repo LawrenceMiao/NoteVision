@@ -16,3 +16,20 @@ Some key points are:
 - Neural networks contain neurons which can activate in layers to determine a final answer.
 - The cost of the network allows it to calculate the negative gradient in order for proper learning.
 - Backpropagation is the algorithm for computing the gradient descent.
+
+## Expanding Python Knowledge
+
+I explored multiple sources listed below to learn more about Python that I did not know beforehand. Topics include classes, files, NumPy, and Pillow. 
+
+- [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
+- [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
+- [File Handling](https://www.w3schools.com/python/python_file_handling.asp)
+- [Python File Open](https://www.w3schools.com/python/python_file_open.asp)
+- [Python File Write](https://www.w3schools.com/python/python_file_write.asp)
+- [Python Delete File](https://www.w3schools.com/python/python_file_remove.asp)
+- [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
+- [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
+
+I learned that:
+
+- Help
