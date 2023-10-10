@@ -17,8 +17,20 @@ This is my progress on Note Vision and everything covered in the course of the s
 - There is a weight assigned to each connection from one neuron to another
 - The weighted sum of the pixel values would give us the region of pixels that we care about 
 - Negative weights would help indicate where the edges are since they would be darker
+- The Sigmoid function helps condense the weighted sums into the range between 0 and 1
+- Negative inputs end up close to zero while positive inputs end up close to 1
+- The activation of a neuron is a measure of how positive the weighted sum is
+- We add a bias to the calculation of the weighted sum to tell how high the weighted sum needs to be to be meaningfully active
+- Each connection between neurons has its own weight and bias associated with it
+- The connections can be represented in a notationally compacted way through the matrix vector product with:
+    - The activations from one layer are put in a column as a vector
+    - The weights as a matrix where each row of the matrix shows the connections between one layer and a neuron in the next layer
+    - The biases as a vector
+    - Adding the bias vector to the previous matrix vector product
+    - Apply Sigmoid
+- An entire network is basically a function with tons of parameters in the forms of weights and biases that pick up on certain patterns and involve matrix vector products and the sigmoid function
 
-### Chapter 2 - Graduent descent, how neural networks learn
+### Chapter 2 - Gradient descent, how neural networks learn
 
 - 
 
