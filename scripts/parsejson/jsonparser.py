@@ -11,6 +11,11 @@ def remove_attribute(input_json):
     if "imageData" in data.keys():
       data.pop("imageData")
 
+  edited_data = json.dumps(data, indent=4)
+
+  with open(input_json, 'w') as file:
+    file.write(edited_data)
+
 if __name__ == "__main__":
   input_json = sys.argv[1]
 
