@@ -14,3 +14,10 @@ This video discusses the concept of gradient descent.
 
 [link to video](https://www.youtube.com/watch?v=IHZwWFHWa-w)
  
+## Python Class Inheritance
+
+To make the child class, you would set the parent class as the parameter. For example, if the parent class was a Fruit, the declaration for the child class would be Berries(Fruit). Any classes that are added to the child class but the parent class has, the parent's function woull be overwritten. There are functions that can be used for certain this. For example, the function super() will be used to inherit all of the properties and methods of the parent class. 
+
+## Dunder methods
+
+Dunder methods are methods that can be used to change the way a class interacts with built in functions and operators. For examples, __init__ and __str__ are two commonly known dunder methods. By adding these dunder methods to a class, the way these functions work can be changed for the class.
