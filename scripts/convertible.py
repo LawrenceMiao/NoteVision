@@ -10,7 +10,7 @@ pdf2image installation
 (2) pip install pdf2image
 
 # windows
-- have no idea good luck :^) 
+(1) conda install -c conda-forge pdf2image
 '''
 
 from pdf2image import convert_from_path
