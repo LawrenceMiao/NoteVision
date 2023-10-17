@@ -38,3 +38,13 @@ I learned that:
 - NumPy is a Python library used for working with ar
 rays and matrices and includes high-level mathematical functions.
 - Pillow is a Python library that lets programmers work with and manipulate images.
+
+## Week of 10/9
+- I labeled an image with LabelMe and saved it as a json file.
+- I created the dataset folder.
+- I uploaded a json file I created with LabelMe.
+- I created a json parser python script.
+
+## Week of 10/16
+- I worked on the json parser python script.
+- I added error checks to the json parser python script.
