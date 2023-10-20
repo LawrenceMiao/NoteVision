@@ -1,7 +1,7 @@
 '''
-input a json file
-remove image attribute of given json file
-save it to an output json file
+input a JSON file
+remove image attribute of given JSON file
+save it to an output JSON file
 '''
 
 import sys, json, errno

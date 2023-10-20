@@ -19,7 +19,7 @@ Some key points are:
 
 ## Expanding Python Knowledge
 
-I explored multiple sources listed below to learn more about Python that Computer Science 1 did not cover. Topics include classes, files, NumPy, and Pillow. 
+I explored multiple sources listed below to learn more about Python that Computer Science 1 did not cover. Topics include classes,  dunder methods, file handling, NumPy, and Pillow. 
 
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
@@ -39,12 +39,22 @@ I learned that:
 rays and matrices and includes high-level mathematical functions.
 - Pillow is a Python library that lets programmers work with and manipulate images.
 
-## Week of 10/9
-- I labeled an image with LabelMe and saved it as a json file.
-- I created the dataset folder.
-- I uploaded a json file I created with LabelMe.
-- I created a json parser python script.
+## Mask R-CNN Model
+Mask R-CNN, Mask Region-based Convulation Neural Network, is a deep learning model used for image segmentation and object detection. Image segmentation is a type of object detection that generates a segmentation map for each detected instance of an object and treats individual objects as distinct entities, regardless of the class of the object. The general steps for transfer learning for Mask R-CNN are as follows: 
+1. Configure using the `maskrcnn` object.
+2. Prepare training data.
+3. Train using the trainMaskRCNN function.
+4. Evaluate using the `evaluateInstanceSegmentation` function.
 
-## Week of 10/16
-- I worked on the json parser python script.
-- I added error checks to the json parser python script.
+### Sources:
+- [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
+- [Mask RCNN GitHub](https://github.com/matterport/Mask_RCNN)
+- [Everything about Mask R-CNN: A Beginner’s Guide](https://viso.ai/deep-learning/mask-r-cnn/)
+- [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
+
+## JSON Parser Python Script
+I developed and implemented a Python script that took in a path to a JSON file as the first command line argument and an optional second argument that would be the output file name. The script would parse the JSON file, remove the image attribute, and output to a new file that is by default named "[original filename]_clean.json" or the optional second argument.
+
+## Test Model
+
+[Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
