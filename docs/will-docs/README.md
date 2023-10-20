@@ -55,3 +55,50 @@ Neuron activation = weight * activation + bias
  it says the current activation is not enough. THe bias determines the y intercept and offests the graph. 
  
  sigmoid function((w1*a1 -10) + (w2*a2 - 10) ... (wn*an - 10))
+
+ Chapter 2 - Gradient descent and analyzing a network
+
+ How does the network learn and what do we want?
+ We want an algo that takes in a bunch of training data which is a bunch of labeled images.
+ The algo will adjust the weights and biases and improve the performance on the training data.
+ The layered structure will hopefully allow the neural network to have decent performance on other
+ new training sets. 
+
+Note: We will understand that machine learning will feel like calculus.
+This is because we neural network is basically optimizing a function to find the miniumums
+
+ Neural networks learn:
+ First initalize the neural network with random weights and biases. The network will do 
+ horribily at first
+
+ The cost function we then define will tell the computer what it's doing bad. The cost function
+ compares the outputs with the output we want.
+
+ Example: The output the network gave has activations for neurons 1,6, 7 ,8 ,9 when we want
+ and output with only an activation for 3 and low to no activation for other neurons.
+
+ Mathematically: 
+ Add up the squares of the differences between the trash activation and the activation we want
+
+ summation of (every_computer_output - correspoding_desired_output)^2 = cost of training example
+ The sum is small when the network is confident gets the desired output and vice versa.
+ We consider the average cost of all the training examples. That value determines how accurate
+ and how bad the computer should feel about the performance.
+
+ Remember: The network is a function that has inputs and spits out an output. Then it is parametrize 
+ by the weights and biases (Parameters: #weights, #bias)
+
+ The cost function is added complexity. Takes in as input 13002 weights/bias and outputs 1 number(cost)
+ and the parameters are the many training examples.
+
+ Telling the computer that the performance is bad isn't helpful so how can we improve the growth mindset.
+
+ We are then trying to minimize the cost function because we want the lowest cost value possible.
+
+ For the function start at a random input and then find the slope to slowly find local minimum which is doable.
+ However we want the global min which is crazy difficult.
+
+ Taking the slope and adjusting the step size portionately to the slope will make the step size smallers as we approach the 
+ minimum.
+
+ Further away from the min will often result in a steeper slope which means the step should be larger.
