@@ -40,11 +40,21 @@ rays and matrices and includes high-level mathematical functions.
 - Pillow is a Python library that lets programmers work with and manipulate images.
 
 ## Mask R-CNN Model
-Mask R-CNN, Mask Region-based Convulation Neural Network, is a deep learning model used for image segmentation and object detection. Image segmentation is a type of object detection that generates a segmentation map for each detected instance of an object and treats individual objects as distinct entities, regardless of the class of the object. The general steps for transfer learning for Mask R-CNN are as follows: 
+A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
+- Convolutional layer
+- Pooling layer
+- Fully connected layer
+
+Mask R-CNN, Mask Region-based Convolutional Neural Network, is a deep learning model used for pixel-wise image segmentation and object detection. Image segmentation is a type of object detection that generates a segmentation map for each detected instance of an object and treats individual objects as distinct entities, regardless of the class of the object. The general steps for transfer learning for Mask R-CNN are as follows: 
 1. Configure using the `maskrcnn` object.
 2. Prepare training data.
 3. Train using the trainMaskRCNN function.
 4. Evaluate using the `evaluateInstanceSegmentation` function.
+
+The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone extracts high-level information and processes images. Mask R-CNN is a powerful model for various computer vision tasks like object detection, image segmentation, and multi-object segmentation. However, it has limitations that include:
+- Computational complexity 
+- Data requirements
+- Small-object segmentation
 
 ### Sources:
 - [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
