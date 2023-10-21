@@ -102,3 +102,8 @@ This is because we neural network is basically optimizing a function to find the
  minimum.
 
  Further away from the min will often result in a steeper slope which means the step should be larger.
+
+ For the cost function there will be more than input so we must take the gradient. The
+ gradient finds the direction of fastest ascent or descent. The gradient is a vector.
+
+ Taking the gradient returns a vector which then you add to the weight and biases.
