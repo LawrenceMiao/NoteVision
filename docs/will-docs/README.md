@@ -109,3 +109,25 @@ This is because we neural network is basically optimizing a function to find the
  Taking the gradient returns a vector which then you add to the weight and biases.
 
  Find the gradient and take a step in the negative gradient.
+ The gradient will be a vector of n length n = #of inputs.
+ The gradient tells what nudges to be made to the weights and biases is going to cause the most
+ rapid decrease in cost function. This makes the output of the network more accurate. The cost function
+ involves the average of all the training data so minimizing the average will improve results on all
+ the training data.
+
+ Question: so shouldn't in theory we should be able to get a perfect neural network for a data set?
+ This doesn't mean accuracy on different data sets right? Is there a limit on accuracy because we
+ can only be so accurate no matter how much information is fed. If there is a limit why is there one?
+
+ The process of repeately nudging the input by some multiple of the gradient to minimize the function
+ is called gradient decesant. 
+
+ Non Spatial way to think about Gradient Descant:
+  Each element in the negative gradient tells us whether the corresponding component of the input vector should 
+  be nudged up or now
+  The magnitude tells us which nudge matters more. The greater than input an input will be greater the more
+  important. Adjusting one weight might have a bigger impact on the cost function that other. 
+  "Which of the change will minimize the cost function the most".
+
+
+  
