@@ -107,3 +107,5 @@ This is because we neural network is basically optimizing a function to find the
  gradient finds the direction of fastest ascent or descent. The gradient is a vector.
 
  Taking the gradient returns a vector which then you add to the weight and biases.
+
+ Find the gradient and take a step in the negative gradient.
