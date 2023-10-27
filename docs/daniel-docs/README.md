@@ -31,3 +31,21 @@ I watched these videos by *3Blue1Brown* to get a fundamental understanding of wh
 
 ## PyTorch Notes:
 I read documentation on how to use PyTorch so I that could apply what I learned about neural networks
+##### Tensors:
+- useful functions?:
+    - torch.rand(tuple representing its size) -> intitialize a tensor with random values 
+    - torch.ones(tuple representing its size) -> intitialize a tensor with 1 as values 
+    - torch.zeros(tuple representing its size) -> intitialize a tensor with 0 as values
+    - tensor_name.shape -> returns the size of the tensor
+    - torch.cat([tensors], dimensions) -> concatenate a sequence of tensors along a given dimension
+- indexing/slicing:
+    - tensor[0] -> refers to the first row
+    - tensor[:, 0] -> refers to the first column
+    - tensor[..., -1] -> refers to the last column
+    - tensor[:,1] -> alter the second column
+- for one-element tensors it is possible to sum up all values into a one value using:
+    - total = tensor_name.sum()
+    - total_item = total.item()
+- in-place operations are denoted by a "_" suffix:
+    - Ex: tensor_name.add_(5)
+##### Datasets & Dataloaders:
