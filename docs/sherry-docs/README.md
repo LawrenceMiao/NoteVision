@@ -58,7 +58,6 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 
 ### Sources:
 - [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
-- [Mask RCNN GitHub](https://github.com/matterport/Mask_RCNN)
 - [Everything about Mask R-CNN: A Beginner’s Guide](https://viso.ai/deep-learning/mask-r-cnn/)
 - [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
 
@@ -67,4 +66,7 @@ I developed and implemented a Python script that took in a path to a JSON file a
 
 ## Test Model
 
-[Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
+### Resources:
+- [Mask RCNN Guide](https://pytorch.org/vision/main/models/mask_rcnn.html)
+- [Mask RCNN GitHub](https://github.com/pytorch/vision/blob/main/torchvision/models/detection/mask_rcnn.py)
+- [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
