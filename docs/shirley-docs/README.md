@@ -21,3 +21,10 @@ To make the child class, you would set the parent class as the parameter. For ex
 ## Dunder methods
 
 Dunder methods are methods that can be used to change the way a class interacts with built in functions and operators. For examples, __init__ and __str__ are two commonly known dunder methods. By adding these dunder methods to a class, the way these functions work can be changed for the class.
+
+## PyTorch
+
+Using PyTorch, we can fine tune Mask RCNN on a custom dataset. Mask RCNN is a deep learning instance segmenetation technique that is used to detected objects. To design a Mask RCNN network, you need to specify the classs and anchor boxes. There are two stages to a Mask RCNN network. The first stage is a regional proposal network. It will create bounding boxes based on anchor boxes. The second stage is a RCNN detector that fine tunes the bounding boxes. To train a Mask RCNN, you need three things aside from the image: the ground-truth bounding boxes, instances labels, and instance masks. All four items will be needed in order to train the Mask RCNN. 
+
+[link to video](https://www.youtube.com/watch?v=vV9L71hK-RE)
+[link to article](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
