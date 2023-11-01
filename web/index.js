@@ -1,0 +1,1 @@
+const yourmom = 0;

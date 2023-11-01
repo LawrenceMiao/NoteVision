@@ -22,11 +22,8 @@ This is my progress on Note Vision and everything covered in the course of the s
 - The activation of a neuron is a measure of how positive the weighted sum is
 - We add a bias to the calculation of the weighted sum to tell how high the weighted sum needs to be to be meaningfully active
 - Each connection between neurons has its own weight and bias associated with it
-<<<<<<< Updated upstream
 - The connections can be represented in a notationally compacted way through the matrix vector product with:
     - The activations from one layer are put in a column as a vector
-- The connections can be represented in a notationally compact way through the matrix vector product with:
-    - The activations from one layer put in a column as a vector
     - The weights as a matrix where each row of the matrix shows the connections between one layer and a neuron in the next layer
     - The biases as a vector
     - Adding the bias vector to the previous matrix vector product
@@ -41,17 +38,3 @@ This is my progress on Note Vision and everything covered in the course of the s
 
 - 
 
-## Python
-
-### Classes
-
-### Files
-
-### NumPy
-I learned the basics of NumPy in order to work with arrays to create and plot data sets.
-
-### Pillow
-I learned about the different image manipulation techniques such as adding filters like blurring, as well as rotating images and saving images in different file types. The Pillow library can help manipulate multiple images from a folder at once instead of doing it one by one. 
-
-### PyTorch
-I touched upon deep learning using the PyTorch framework and learned about how to train a model that goes from producing random noise to fairly good images of handwritten digits and faces.
