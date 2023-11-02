@@ -19,7 +19,7 @@ Some key points are:
 
 ## Expanding Python Knowledge
 
-I explored multiple sources listed below to learn more about Python that Computer Science 1 did not cover. Topics include classes, files, NumPy, and Pillow. 
+I explored multiple sources listed below to learn more about Python that Computer Science 1 did not cover. Topics include classes,  dunder methods, file handling, NumPy, and Pillow. 
 
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
@@ -38,3 +38,35 @@ I learned that:
 - NumPy is a Python library used for working with ar
 rays and matrices and includes high-level mathematical functions.
 - Pillow is a Python library that lets programmers work with and manipulate images.
+
+## Mask R-CNN Model
+A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
+- Convolutional layer
+- Pooling layer
+- Fully connected layer
+
+Mask R-CNN, Mask Region-based Convolutional Neural Network, is a deep learning model used for pixel-wise image segmentation and object detection. Image segmentation is a type of object detection that generates a segmentation map for each detected instance of an object and treats individual objects as distinct entities, regardless of the class of the object. The general steps for transfer learning for Mask R-CNN are as follows: 
+1. Configure using the `maskrcnn` object.
+2. Prepare training data.
+3. Train using the trainMaskRCNN function.
+4. Evaluate using the `evaluateInstanceSegmentation` function.
+
+The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone extracts high-level information and processes images. Mask R-CNN is a powerful model for various computer vision tasks like object detection, image segmentation, and multi-object segmentation. However, it has limitations that include:
+- Computational complexity 
+- Data requirements
+- Small-object segmentation
+
+### Sources:
+- [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
+- [Everything about Mask R-CNN: A Beginner’s Guide](https://viso.ai/deep-learning/mask-r-cnn/)
+- [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
+
+## JSON Parser Python Script
+I developed and implemented a Python script that took in a path to a JSON file as the first command line argument and an optional second argument that would be the output file name. The script would parse the JSON file, remove the image attribute, and output to a new file that is by default named "[original filename]_clean.json" or the optional second argument.
+
+## Test Model
+
+### Resources:
+- [Mask RCNN Guide](https://pytorch.org/vision/main/models/mask_rcnn.html)
+- [Mask RCNN GitHub](https://github.com/pytorch/vision/blob/main/torchvision/models/detection/mask_rcnn.py)
+- [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)

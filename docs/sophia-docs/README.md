@@ -24,6 +24,8 @@ This is my progress on Note Vision and everything covered in the course of the s
 - Each connection between neurons has its own weight and bias associated with it
 - The connections can be represented in a notationally compacted way through the matrix vector product with:
     - The activations from one layer are put in a column as a vector
+- The connections can be represented in a notationally compact way through the matrix vector product with:
+    - The activations from one layer put in a column as a vector
     - The weights as a matrix where each row of the matrix shows the connections between one layer and a neuron in the next layer
     - The biases as a vector
     - Adding the bias vector to the previous matrix vector product
@@ -32,9 +34,34 @@ This is my progress on Note Vision and everything covered in the course of the s
 
 ### Chapter 2 - Gradient descent, how neural networks learn
 
+- An example of how a layered structure of a network learns goes like this:
+    - The first layer takes in images of handwritten numbers that are to be deciphered
+    - The second layer picks up on the edges 
+    - The third layer picks up on patterns like loops an lines 
+    - The last layer pieces pieces together the patterns to recognize digits
+- A large amount of training data is provided to a network to train it to see how well it can classify images
+- A cost function takes in the weights and the biases and outputs a single number (the cost) through many training examples which measures how lousy a network is
+- The algorithm for computing the gradients efficiently is called back propagation.
 - 
 
 ### Chapter 3 - What is backpropagation really doing?
 
 - 
 
+## Python
+
+### Classes
+
+### Files
+
+### NumPy
+I learned the basics of NumPy in order to work with arrays to create and plot data sets.
+
+### Pillow
+I learned about the different image manipulation techniques such as adding filters like blurring, as well as rotating images and saving images in different file types. The Pillow library can help manipulate multiple images from a folder at once instead of doing it one by one. 
+
+### PyTorch
+I touched upon deep learning using the PyTorch framework and learned about how to train a model that goes from producing random noise to fairly good images of handwritten digits and faces.
+
+### Mask R-CNN
+Mask R-CNN stands for Mask Region-based Convoluntional Neural Network and is a deep learning instance segmentation technique where pixel-level segmentation is perfomed on detched objects. After images get passed in the layers in the neural network, the loss is computed. This loss is how different the predicted results are from the actual expected results. The training process includes looking at the loss, adjusting the weights, and recalculating the outputs using the original images as input. The cycle continues with numerous iterations until the final CNN, which would be the AL model used for predictions. 
