@@ -102,7 +102,7 @@ conda activate test_env
 # Introduction to Neural Networks and Deep Learning
 
 ## Neural Networks
-A network contains multiple neurons that hold information. 
+A network contains multiple neurons that hold information.
 
 ### Videos:
 - [Chapter 1 | But what is a neural network?](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
@@ -111,15 +111,30 @@ A network contains multiple neurons that hold information.
 
 # Relevant Python Information
 
-## Python Classes and Inheritance
-Python inheritance allows programmers to create child classes (base classes) that inherit methods and properties from parent classes (derived classes). Any class can be a parent class, but to create a child class that inherits from another class, you need to make the parent class a parameter of the child class.
+## Python Classes
+### Inheritance
+Python inheritance allows programmers to create child classes (base classes) that inherit methods and properties from parent classes (derived classes). Any class can be a parent class, but to create a child class that inherits from another class, you need to make the parent class a parameter of the child class. 
+
+If your child class does not need any other methods or properties, use the `pass` keyword so that the class simply inherits everything. However, if you want to alter parts of the child class, do not use `pass` and create your own methods where you can call the parent class methods either using the parent class's name or `super()`. If you add a method with the same name as a method in the parent class, the inheritance of the parent method will be overridden. 
+
+For example, you can add the `__init__()` function to the child class which overrides the parent class's `__init__()` function. The `__init__()` function is automatically called every time an instance of the class is created. In the new `__init__()` function, you can call the parent `__init__()` function by using either the name or `super()`.
+
+### Super()
+The `super()` function is used to refer to the parent class. It is a normal practice in object-oriented programming to inherit from parent classes and allow for method override. You can enhance the usability of the parent class without altering it. The benefits of using `super()` include: 
+- It is not necessary to remember the name of the parent class even in single or multiple inheritances
+- It is dynamic which allows you to change the structure of classes at run-time unlike static programming languages.
+- It implements modularity which is isolating changes so the original code remains intact and code reusability because you do not have to rewrite the entire function. 
+
+### Dunder Methods
+Dunder methods, also known
+Dunder methods let class objects interact with built-in functions, keywords, and operators of Python.
 
 ### Sources:
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
+- [Python Super()](https://www.geeksforgeeks.org/python-super/)
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
 
 ## Python File Handling
-Python
 
 ### Sources:
 - [File Handling](https://www.w3schools.com/python/python_file_handling.asp)
@@ -128,12 +143,10 @@ Python
 - [Python Delete File](https://www.w3schools.com/python/python_file_remove.asp)
 
 ## NumPy
-Python
 
 **Source:** [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
 
 ## Pillow
-Python
 
 **Source:** [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
 
@@ -158,3 +171,10 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 - [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
 - [Everything about Mask R-CNN: A Beginner’s Guide](https://viso.ai/deep-learning/mask-r-cnn/)
 - [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
+
+# Test Model
+
+### Resources:
+- [Mask RCNN Guide](https://pytorch.org/vision/main/models/mask_rcnn.html)
+- [Mask RCNN GitHub](https://github.com/pytorch/vision/blob/main/torchvision/models/detection/mask_rcnn.py)
+- [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
