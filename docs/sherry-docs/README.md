@@ -142,13 +142,29 @@ There are many dunder methods, you can find a list of many of them [here](https:
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
 
 ## Python File Handling
-Python provides various file handling functions like "open()", ".read()", ".readline()", ".close()", ".write()", ".remove()", and more. 
+Python provides various functions for file handling. A key function is the `open()` function which takes in two parameters: the file name and mode. If the file is located in a different location than the Python code, then the file name needs to include the file path. There are four different modes for opening the file:
+- "r": The read mode opens the file for reading, raises an error if the file does not exist, and is one of two default values when `open()` is called.
+- "w": The write mode opens the file for writing and if the file does not exist, creates the file.
+- "a": The append mode opens the file for appending and if the file does not exist, creates the file.
+- "x": The create mode creates the file and raises an error if the file already exists.
+You can specify what way the file should be handled by adding either of the following to the mode.
+- "t": Text mode is one of two default values when `open()` is called.
+- "b": Binary mode
+The `open()` function returns a file object which has a  `read()` method so you can read the content of the file. 
+
+The `read()` method returns the entire text of the file by default, but you can choose how many characters you want to return by putting a number in the parenthesis of `read()`. You can use `readline()` to return a single line of the file. You can call `readline()` multiple times, and it will return a new line if there is one every time. You can read the entire file, line by line, if you loop through the lines using `readline()`.
+
+There are two modes to write to existing files: "w" and "a". The "w" mode will overwrite the entire file.
+
+You should always close a file when you are done with it by using `close()` and some changes made to files may not show up until the file is closed.
+
+You must import the OS module and run the `os.remove()` function in order to delete a file. However, you want to check if the file exists before deleting it to avoid getting any errors. You can use `os.path.exists()` to check if the file exists. In addition, you can delete a folder, using the `os.rmdir()` function, but you can only delete empty folders.
 
 ### Sources:
-- [File Handling](https://www.w3schools.com/python/python_file_handling.asp)
-- [Python File Open](https://www.w3schools.com/python/python_file_open.asp)
-- [Python File Write](https://www.w3schools.com/python/python_file_write.asp)
-- [Python Delete File](https://www.w3schools.com/python/python_file_remove.asp)
+- [Python File Handling](https://www.w3schools.com/python/python_file_handling.asp)
+- [Python Read Files](https://www.w3schools.com/python/python_file_open.asp)
+- [Python Write/Create Files](https://www.w3schools.com/python/python_file_write.asp)
+- [Python Delete Files](https://www.w3schools.com/python/python_file_remove.asp)
 
 ## NumPy
 
