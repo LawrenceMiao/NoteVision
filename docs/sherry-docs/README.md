@@ -19,7 +19,7 @@ If the version number is Python 2.x.y, where x and y are unknown numbers, you wi
 
 Head to https://www.python.org/downloads/ and download the appropriate OS version of Python, and run the command above again to make sure you have the latest version of Python 3.
 
-Source: https://wiki.python.org/moin/BeginnersGuide/Download
+**Source:** https://wiki.python.org/moin/BeginnersGuide/Download
 
 ## Anaconda
 Download the appropriate version of [Anaconda](https://www.anaconda.com/download) for your device or follow the appropriate installation guides below. (Note: make sure to follow the Anaconda specific instructions.)
@@ -99,12 +99,12 @@ conda activate test_env
 4. Copy and paste the command into your environment, and run it.
 5. Check that it successfully downloaded by following the instructions from above.
 
-
 # Introduction to Neural Networks and Deep Learning
 
 ## Neural Networks
 A network contains multiple neurons that hold information. 
 
+### Videos:
 - [Chapter 1 | But what is a neural network?](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
 - [Chapter 2 | Gradient descent, how neural networks learn](https://youtu.be/IHZwWFHWa-w?si=bdLgCjGBCk_S1ENU)
 - [Chapter 3 | What is backpropagation really doing?](https://youtu.be/Ilg3gGewQ5U?si=7DkytDDaGr3OIsuv)
@@ -112,25 +112,30 @@ A network contains multiple neurons that hold information.
 # Relevant Python Information
 
 ## Python Classes and Inheritance
-Python inheritance allows programmers to create child clases that inherit methods and properties from parent classes and allows child classes to override inherited methods.
+Python inheritance allows programmers to create child classes (base classes) that inherit methods and properties from parent classes (derived classes). Any class can be a parent class, but to create a child class that inherits from another class, you need to make the parent class a parameter of the child class.
 
+### Sources:
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
 
 ## Python File Handling
+Python
 
+### Sources:
 - [File Handling](https://www.w3schools.com/python/python_file_handling.asp)
 - [Python File Open](https://www.w3schools.com/python/python_file_open.asp)
 - [Python File Write](https://www.w3schools.com/python/python_file_write.asp)
 - [Python Delete File](https://www.w3schools.com/python/python_file_remove.asp)
 
 ## NumPy
+Python
 
-- [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
+**Source:** [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
 
 ## Pillow
+Python
 
-- [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
+**Source:** [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
 
 # Mask R-CNN Model
 A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
