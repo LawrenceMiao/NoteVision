@@ -30,9 +30,30 @@ Link to video: (https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
 ## PyTorch
 
+##### Installation
+
 In order to get started with PyTorch you must have Anaconda installed. To install Anaconda visit the Anaconda website: https://www.anaconda.com/products/distribution. Here you will select the version best suited for your operating system and download the installer. After opening the installer, follow the basic setup wizard to completion.
 
 Once Anaconda is installed visit the PyTorch website: https://pytorch.org/get-started/locally/. On this page you will find a table of preferences. Select the preferences based on your operating system to aqquire the correct install command. Copy the provided install command.
 
-Open command prompt and create a new environment.In the command prompt enter the line:
+Open command prompt and create a new environment. In the command prompt enter the line:
 conda create --name (environment name) (version of python). After doing so activate the new environment and paste the install commmand and follow the provided instructions.
+
+##### Basic Pytorch Information
+
+- useful functions:
+    - torch.rand(tuple representing its size) -> intitialize a tensor with random values 
+    - torch.ones(tuple representing its size) -> intitialize a tensor with 1 as values 
+    - torch.zeros(tuple representing its size) -> intitialize a tensor with 0 as values
+    - tensor_name.shape -> returns the size of the tensor
+    - torch.cat([tensors], dimensions) -> concatenate a sequence of tensors along a given dimension
+- indexing/slicing:
+    - tensor[0] -> refers to the first row
+    - tensor[:, 0] -> refers to the first column
+    - tensor[..., -1] -> refers to the last column
+    - tensor[:,1] -> alter the second column
+- for one-element tensors it is possible to sum up all values into a one value using:
+    - total = tensor_name.sum()
+    - total_item = total.item()
+- in-place operations are denoted by a "_" suffix:
+    - Ex: tensor_name.add_(5)
