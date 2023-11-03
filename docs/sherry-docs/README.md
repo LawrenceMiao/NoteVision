@@ -2,8 +2,8 @@
 
 Note Vision is an AI tool designed to help enable musicians and composers to transform physical sheet music to a MIDI file.
 
-# Instructions to Install Necessary Environments
-Python, Anaconda, Labelme, and Pytorch are necessary for the developement and implementation of NoteVision.
+# Instructions to Install Necessary Environments and Libraries
+Python, Anaconda, Labelme, Pytorch, NumPy, and Pillow are necessary for the development and implementation of NoteVision.
 
 ## Python
 Python often comes pre-installed, so check if your device has Python or which version of Python it runs by running the following code:
@@ -99,6 +99,23 @@ conda activate test_env
 4. Copy and paste the command into your environment, and run it.
 5. Check that it successfully downloaded by following the instructions from above.
 
+## NumPy
+Anaconda is a Python distribution that already has NumPy installed but if you want to install NumPy then using Python and PIP, run the following command:
+```
+pip install numpy
+```
+
+## Pillow
+You can install Pillow with PIP and Python:
+```
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade Pillow
+```
+You can find more specific instructions [here](https://pillow.readthedocs.io/en/stable/installation.html).
+
+## PIP (optional but useful)
+If you do not have PIP and would like PIP, head to this [link](https://pip.pypa.io/en/stable/installation/) and follow the instructions. Then you will be able to run the command above. 
+
 # Introduction to Neural Networks and Deep Learning
 
 ## Neural Networks
@@ -167,6 +184,7 @@ You must import the OS module and run the `os.remove()` function in order to del
 - [Python Delete Files](https://www.w3schools.com/python/python_file_remove.asp)
 
 ## NumPy
+NumPy, "Numerical Python," is a Python library used for working with arrays and has functions for linear algebra, fourier transform, and matrices. NumPy attempts to provide an array object that is much faster than tradition Python lists. The array object is called `ndarray` and NumPy provides many supporting functions that make working with the array object quite easy. NumPy arrays are faster than lists because they are stored in one place in memory unlike lists. 
 
 **Source:** [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
 
