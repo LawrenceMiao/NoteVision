@@ -5,6 +5,22 @@ Note Vision is an AI tool designed to help enable musicians and composers to tra
 # Instructions to Install Necessary Environments
 Python, Anaconda, Labelme, and Pytorch are necessary to the developement of NoteVision.
 
+## Python
+Python often comes pre-installed, to check if your device has Python or which version of Python it runs, run the following code:
+```
+python -version
+
+# run if there is an error for the prior command
+python3 –version
+```
+If both commands fail, then you likely do not have Python and need to download Python 3.
+
+If the version number is Python 2.x.y which is no longer supported, you will need to update to Python 3.
+
+Head to https://www.python.org/downloads/ and download the appropriate OS version of Python.
+
+https://wiki.python.org/moin/BeginnersGuide/Download
+
 ## Anaconda
 Download the appropriate version of [Anaconda](https://www.anaconda.com/download) for your device or follow the appropriate installation guides below making sure to follow Anaconda instructions.
 
