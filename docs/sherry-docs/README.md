@@ -126,8 +126,15 @@ The `super()` function is used to refer to the parent class. It is a normal prac
 - It implements modularity which is isolating changes so the original code remains intact and code reusability because you do not have to rewrite the entire function. 
 
 ### Dunder Methods
-Dunder methods, also known
-Dunder methods let class objects interact with built-in functions, keywords, and operators of Python.
+Dunder methods, also known as magic methods, let class objects interact with built-in functions, keywords, and operators of a language in this case Python. The names of dunder methods usually begin and end with two underscores which is where the name, dunder, came from. Dunder methods are not typically directly called by the programmer rather they are called implicitly.
+
+A well-known dunder method is the `__init__()` function which is in charge of initializing instances of your class. It is rarely called directly instead runs automatically. 
+
+There is no special reason for the two underscores at the beginning and end of the method name and regular functions created by programmers can also begin and end with two underscores. The purpose of the two underscores is to prevent name collision with functions programmers may create. For example, there is a `__sum__()` dunder method but programmers often create their own `sum` functions, so if the dunder method did not have the underscores then you accidentally lose access to the built-in function by overriding the original dunder method.
+
+All Python operators rely on dunder methods to execute their behavior which is why it does not matter that some names of dunder methods like `__sum__()` are inconvenient to use because they are rarely called explicitly. You can overload certain operators to make them work customly with your class objects by implementing the respective dunder method that corresponds to the operator.
+
+There are many dunder methods, you can find a list of many of them [here](https://mathspp.com/blog/pydonts/dunder-methods#list-of-dunder-methods-and-their-interactions).
 
 ### Sources:
 - [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
