@@ -15,7 +15,7 @@ python3 –version
 ```
 If both commands fail, then you likely do not have Python and need to download Python 3.
 
-If the version number is Python 2.x.y, where x and y are unknown numbers, you will need to update to Python 3 because that version is no longer supported.
+If the version number is Python 2.x.y, where x and y are unknown numbers, you will need to update to Python 3 because Python 2.x.y is no longer supported and is not recommended for development.
 
 Head to https://www.python.org/downloads/ and download the appropriate OS version of Python, and run the command above again to make sure you have the latest version of Python 3.
 
@@ -132,3 +132,24 @@ Python inheritance allows programmers to create child clases that inherit method
 
 - [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
 
+# Mask R-CNN Model
+A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
+- Convolutional layer
+- Pooling layer
+- Fully connected layer
+
+Mask R-CNN, Mask Region-based Convolutional Neural Network, is a deep learning model used for pixel-wise image segmentation and object detection. Image segmentation is a type of object detection that generates a segmentation map for each detected instance of an object and treats individual objects as distinct entities, regardless of the class of the object. The general steps for transfer learning for Mask R-CNN are as follows: 
+1. Configure using the `maskrcnn` object.
+2. Prepare training data.
+3. Train using the trainMaskRCNN function.
+4. Evaluate using the `evaluateInstanceSegmentation` function.
+
+The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone extracts high-level information and processes images. Mask R-CNN is a powerful model for various computer vision tasks like object detection, image segmentation, and multi-object segmentation. However, it has limitations that include:
+- Computational complexity 
+- Data requirements
+- Small-object segmentation
+
+### Sources:
+- [What is Mask R-CNN? The Ultimate Guide](https://blog.roboflow.com/mask-rcnn/)
+- [Everything about Mask R-CNN: A Beginner’s Guide](https://viso.ai/deep-learning/mask-r-cnn/)
+- [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
