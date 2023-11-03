@@ -142,6 +142,7 @@ There are many dunder methods, you can find a list of many of them [here](https:
 - [Dunder Methods](https://mathspp.com/blog/pydonts/dunder-methods)
 
 ## Python File Handling
+Python provides various file handling functions like "open()", ".read()", ".readline()", ".close()", ".write()", ".remove()", and more. 
 
 ### Sources:
 - [File Handling](https://www.w3schools.com/python/python_file_handling.asp)
