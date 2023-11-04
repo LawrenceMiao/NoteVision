@@ -61,16 +61,56 @@ class Melon(Fruit):
 		self.color = newColor
 	
 	def printMoreInfo(self):
-		print("I am a {}. I am harvested during the {}. I am a(n) {} melon, which means I have grow on a vine and contain many seeds.", self.name, self.season, self.color)
+		print("I am a(n) {} melon, which means I have grow on a vine and contain many seeds.", self.color)
 ```
 
+### Sources
 - [inferitance info](https://www.w3schools.com/python/python_inheritance.asp)
 - [more info](https://www.geeksforgeeks.org/inheritance-in-python/)
 
 ## Dunder methods
 
-Dunder methods are methods that can be used to change the way a class interacts with built in functions and operators. For examples, __init__ and __str__ are two commonly known dunder methods. By adding these dunder methods to a class, the way these functions work can be changed for the class.
+Dunder methods, also called magic methods, are methods that can be used to change the way a class interacts with built in functions and operators. Here are some commonly used dunder methods.
 
+The `__init__` function contains what will happen when the object is initialized. In this example, when a new `TropicalFruit` object is created, all of the values will be assigned to their respective variables.
+```py
+class TropicalFruit(Fruit): 
+	def __init__(self, newName, newSeason, newLocation):
+		super().__init__(self, newName, newSeason)
+		self.location = newLocation
+```
+
+The `__str__` function contains what will happen when you use the `str()` function on the object. Continuning the same class as before, when the `TropicalFruit` object printed or put in the `str()` function, it will return `"I'M A TROPICAL FRUIT!!"`.
+```py
+	def __str__(self):
+		return ("I'M A TROPICAL FRUIT!!")
+```
+
+The `__add__` function contains what will happen when you add two of the objects together. In this examples, we combine the names, seasons, and locations and create a new object with it. 
+```py
+	def __add__(self, other):
+		names = self.name + other.name
+		seasons = self.season + other.season
+		locations = self.location + other.location
+		return TropicalFruit(names, seasons, locations)
+```
+
+Some other dunder methods include, but are not limited to:
+- `__ceil__`
+- `__floor__`
+- `__round__`
+- `__sub__`
+- `__mul__`
+- `__div__`
+- `__repr__`
+- `__unicode__`
+- `__format__`
+- `__hash__`
+
+### Sources:
+- [dunder methods](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
+- [str magic method](https://www.scaler.com/topics/python-str/)
+- [add magic method](https://www.geeksforgeeks.org/python-__add__-magic-method/)
 
 ## PyTorch
 
