@@ -117,9 +117,38 @@ You can find more specific instructions [here](https://pillow.readthedocs.io/en/
 If you do not have PIP and would like PIP, head to this [link](https://pip.pypa.io/en/stable/installation/) and follow the instructions. Then you will be able to run the command above. 
 
 # Introduction to Neural Networks and Deep Learning
+Note: An example problem that will be used for this section is training a model to recognize handwritten digits from 0 to 9.
 
 ## Neural Networks
-A network contains multiple neurons that hold information.
+In biology, neural networks or neural circuit are groups of neurons that are functionally or chemically connected. Each individual neuron can be connected to many other neurons. When the biological neural circuit is activited a specific function is carried out. Biological neural circuits inspired artificial neural networks. 
+
+An artifical neural network or just neural network contains multiple neurons that hold information. Each neuron may be connected to many other neurons similar to the neural circuits. Each connection or edge can transmit signals to other neurons. The articial neuron recieves signals, processes them, then sends signals to other neurons. The signal is a number that can be used to compute some weighted sum or other function. Neurons and edges have weights to them that adjust the more the model learns. The purpose of the weight is to increase or decrease the strength of a signal of an edge. They usually have thresholds where only when the neuron crosses the threshold will a signal be sent.
+
+Usually, neurons are aggregated into multiple layers. The layers help detect edges and patterns that help determine what the image is a digit of. Each layer can perform different transformations to their input. Signals travel from the first layer which usually has hundreds of neurons to the last layer where an answer is chosen. The signals often travel through multiple layers in order to get from the first to the last layer. 
+
+<!-- example -->
+
+Following the example, each neuron would hold a number between 0 and 1 which is the greyscale value of the corresponding pixel given an image of a handwritten digit. Specifically, black pixels are represented as 0 and white pixels are denoted as 1. 
+
+There are around seven hundred eighty four neurons that make up the first layer and just ten neurons in the last layer that represent the digits. There are hidden layers between the first and last layer that signals get sent through. To get to the last layer, certain groups of neurons fire which cause certain other groups to fire and eventually the signal reaches the last layer. This layered structure essentially helps the model narrow down what the digit is through testing. 
+
+However, there needs to be a way to combine pixels into edges, edges into patterns, patterns into digits. This is done with weights and weighted sum. Weights are assigned to each one of the edges between the neuron and the neurons from the first layer. By taking the weighted sum of all the pixels amounts to the sum of pixel values that matter. To improve edge detection of a digit, incorporate negative weights. Through negative weights, the sum is largest when the pixels are bright and the surrounding pixels are dark. 
+
+However, this weighted sum needs to be between 0 and 1 for activation, so it is best to use some function that squishes any input into a number between 0 and 1. A common function that achieves this is the sigmoid function that basically simplifies to very negative inputs are close to 0 and very positive inputs are close to 1. 
+
+<!-- not done -->
+
+## Gradient Descent
+
+The cost of the network allows it to calculate the negative gradient in order for proper learning.
+
+<!-- not done -->
+
+## Backprogation
+
+Backpropagation is the algorithm for computing the gradient descent. 
+
+<!-- not done -->
 
 ### Videos:
 - [Chapter 1 | But what is a neural network?](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
@@ -193,7 +222,7 @@ There are many different functions NumPy contains and you can learn more by visi
 **Source:** [NumPy Tutorial](https://www.w3schools.com/python/numpy/default.asp)
 
 ## Pillow
-Pillow is a Python library used to manipulate and modify images. Pillow is built on top of PIL, Python Image Library, and is a fork for it since PIL was discontinued in 2021. It will allow you to do many things to images like cropping, resizing, altering the colors, and more. You can modify many images at once or run a script that automatically changes any images that are uploaded to a certain directory. Pillow supports many image formats including JPEG, PNG, and TIFF. 
+Pillow is a Python library used to manipulate and modify images. Pillow is built on top of PIL, Python Image Library, and is a fork for it since PIL was discontinued in 2021. It will allow you to do many things to images like cropping, resizing, altering the colors, and more. You can modify many images at once or run a script that automatically changes any images that are uploaded to a certain directory. Pillow supports many image formats including JPEG, PNG, TIFF, and more. 
 
 You can import Pillow into your applications with `from PIL import image`.
 
@@ -201,7 +230,7 @@ You can read and display the image using `open()` and `show()`. On Windows to di
 
 Each image has a `.size`, `.format`, and `.mode` attributes. The size attribute returns the image size in a tuple that contains the width and height. The format attribute returns the image file format. The mode attribute returns the type and depth of the pixel in the image. There are many different modes provided by Pillow.
 
-You can rotate the image using the `rotate()` method. Sections of the image that have no pixel values are filled with black for non-alpha images or with transparent pixels for images that support transparency after the image rotation.
+You can rotate the image using the `rotate()` method. After image rotation, any sections of the image that have no pixel values are filled with black for non-alpha images or with transparent pixels for images that support transparency.
 
 The `transpose()` method of the Image class can be used to transpose the image. You can flip or rotate the image in ninety degree steps. There are two keywords that can be passed to the transpose method:
 - FLIP_TOP_BOTTOM: Returns the given image vertically flipped
@@ -240,6 +269,8 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 - [Getting Started with Mask R-CNN for Instance Segmentation](https://www.mathworks.com/help/vision/ug/getting-started-with-mask-r-cnn-for-instance-segmentation.html)
 
 # Test Model
+
+<!-- not done -->
 
 ### Resources:
 - [Mask RCNN Guide](https://pytorch.org/vision/main/models/mask_rcnn.html)
