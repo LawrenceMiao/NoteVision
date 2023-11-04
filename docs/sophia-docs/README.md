@@ -1,4 +1,47 @@
-# Documentation - Sophia Chen
+# Note Vision Documentation - Sophia Chen
+
+Note Vision is a tool for musicians and composers to easily convert picture(s) of physical handwritten sheet music to digial MIDI files using AI. 
+
+## Installation Guides
+There are a few packages and softwares that are required for this project including Anaconda, PyTorch, and LabelMe. 
+
+
+### Anaconda
+There are two installation options: Anaconda and Miniconda. It is highly recommended to install Anaconda although it is a much larger package. 
+
+Follow the instructions to install Anaconda or Miniconda on:
+- [Windows](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)
+- [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html)
+
+After installation, you can test the package by going to your terminal window or Anaconda Prompt and running the command:
+
+```
+conda list
+```
+
+A list of installed packages will appear if the installation was successfull. 
+
+### PyTorch
+To install the PyTorch library locally for your operating system, first head over to the [PyTorch website](https://pytorch.org/get-started/locally/). Open up your terminal window and create and activate a new conda environment by running the commands:
+
+```
+conda create --name test_env
+conda activiate test_env
+```
+
+From the website, select the following: Stable (2.1.0), Windows, Conda, Python, CPU. If you use the Linux or Mac OS, select that instead of Windows. Note that for Windows users, PyTorch only supports Windows 7 or greater. 
+
+Copy and run the generated command after making the selections in your terminal window or command prompt.
+
+To check if the installation was successful, run the following Python script:
+
+```
+import torch
+print(torch.__version__)
+```
+
+### LabelMe
+
 
 ## Neural Networks and Deep Learning
 
@@ -58,9 +101,9 @@ I learned the basics of NumPy in order to work with arrays to create and plot da
 ## Pillow
 The Python Imaging Library is a free and open-source library for the Python and C language that helps with opening, manipulating, processing, and saving different image file formats. Some image manipulation techniques the library offers include adding filters, blurring objects and people, and rotating images. The Pillow library can help manipulate multiple images from a folder at once instead of doing it individually as well, which makes it really useful. The library is available to install for Windows, MAC OS X, and Linux.
 
-
 ## PyTorch
 I touched upon deep learning using the PyTorch framework and learned how to train a model that goes from producing random noise to fairly good images of handwritten digits and faces.
 
 ## Mask R-CNN
 Mask R-CNN stands for Mask Region-based Convolutional Neural Network and is a deep learning instance segmentation technique where pixel-level segmentation is performed on the objects. After images get passed in the layers in the neural network, the loss is computed. This loss is how different the predicted results are from the actual expected results. The training process includes looking at the loss, adjusting the weights, and recalculating the outputs using the original images as input. The cycle continues with numerous iterations until the final CNN, the AL model used for predictions. 
+
