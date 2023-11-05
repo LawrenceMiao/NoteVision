@@ -7,8 +7,9 @@ This README.md contains the documentation process of what I learned/contributed 
 
 Watch these videos by *3Blue1Brown* to get a fundamental understanding of what neural networks are and how they work.
 
-### Chapter 1: [Video Link](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
---- 
+
+### [Chapter 1](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
+---
 The video begins by presenting a handwritten digit "three" and marveling at how effortlessly our brains can recognize it, despite variations in pixel values. It introduces the challenge of creating a program that can perform this recognition and sets the stage for explaining neural networks.
 
 It emaphasizes the importance and relevance of machine learning and neural networks. It aims to help viewers understand the structure of neural networks and how they work as a piece of mathematical machinery. The goal is to demystify neural networks and inspire confidence in understanding the concept of "neural network learning."
@@ -27,7 +28,7 @@ The video closes by introducing the ReLU (Rectified Linear Unit) function as an 
 
 
 
-### Chapter 2: [Video Link](https://youtu.be/IHZwWFHWa-w?si=bdLgCjGBCk_S1ENU)
+### [Chapter 2](https://youtu.be/IHZwWFHWa-w?si=bdLgCjGBCk_S1ENU)
 ---
 This video provides an overview of neural networks and their learning process. It starts with a recap of the structure of a neural network and then focuses on two main goals. The first goal is to introduce the concept of gradient descent, which is a fundamental part of how neural networks learn. Gradient descent is explained as a method for finding the minimum of a cost function, which helps the network improve its performance on training data.
 
@@ -52,13 +53,35 @@ To speed up the computational process, stochastic gradient descent is introduced
 In summary, backpropagation is a crucial algorithm for adjusting neural network weights and biases to minimize a cost function. It relies on considering how training examples influence the network's output and requires a large amount of labeled training data to work effectively. Stochastic gradient descent is a practical technique for making the process more efficient.
 
 
+
 ## PDF -> PNG Converter Script | Python
+
 
 Designed and implemented a Python script that took in a path to a PDF file as a command line argument that would then convert each page of the PDF file into a series of PNG files that are clustered together into a new directory within the directory.
 
 [Example PDF File](/Users/marvinko/Code/NoteVision/scripts/convertible.pdf)
 
 ![Example PNG Image](/Users/marvinko/Code/NoteVision/scripts/pdf2images/page_3.png)
+
+### Prerequisites
+---
+> Python pdf2image module installation \
+> pdf2image installation 
+>
+>    **Linux**
+>>    (1) sudo apt-get install poppler-utils
+>>
+>>    (2) pip install pdf2image
+>
+>    # mac
+>   (1) brew install poppler
+>   (2) pip install pdf2image
+
+    # windows
+    (1) conda install -c conda-forge pdf2image
+
+
+
 
 
 
