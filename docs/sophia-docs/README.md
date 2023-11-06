@@ -84,7 +84,24 @@ conda list | findstr "torch"
 If properly installed, the output should show the torch library as **pytorch** along with the version number.
 
 ### LabelMe
+LabelMe is an open source image annotation tool used for object detection, classification, and labeling of images to create a dataset for computer vision model training. 
 
+To install in Aanaconda, run this in an Anaconda prompt:
+
+```
+conda create --name=labelme python=3
+source activate labelme
+pip install labelme
+```
+
+To install on macOS, 
+
+```
+brew install pyqt
+pip install labelme
+```
+
+To install the executive application, visit the [Github Page](https://github.com/wkentaro/labelme/releases) and select the appropriate file for your operating system. If you're using Windows, choose the file named `Labelme.exe` for installation. 
 
 ## Neural Networks and Deep Learning
 
