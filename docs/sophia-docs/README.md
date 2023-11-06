@@ -1,9 +1,33 @@
 # Note Vision Documentation - Sophia Chen
 
-Note Vision is a tool for musicians and composers to easily convert picture(s) of physical handwritten sheet music to digial MIDI files using AI. 
+Note Vision is a tool for musicians and composers to easily convert pictures of physical handwritten sheet musics to digial MIDI files using AI. 
 
 ## Installation Guides
-There are a few packages and softwares that are required for this project including Anaconda, PyTorch, and LabelMe. 
+There are a few packages and softwares that are required for this project including Python, Anaconda, PyTorch, and LabelMe. 
+
+### Python
+
+To check if you have Python installed, first open your terminal window or command prompt. 
+
+For Windows users, run:
+
+```
+py --version
+```
+
+For Mac users, run: 
+
+```
+python3 --version
+```
+
+If Python is installed, you should see a message like this:
+
+```
+Python 3.11.5
+```
+
+If Python is not installed, download the appropriate package on the [Python website](https://www.python.org/downloads/windows/).
 
 
 ### Anaconda
@@ -33,12 +57,31 @@ From the website, select the following: Stable (2.1.0), Windows, Conda, Python, 
 
 Copy and run the generated command after making the selections in your terminal window or command prompt.
 
-To check if the installation was successful, run the following Python script:
+To check if the installation was successful, run the following Python script in your terminal or command prompt:
+
+For Windows:
 
 ```
+py
 import torch
 print(torch.__version__)
 ```
+
+For Mac:
+
+```
+python3
+import torch
+print(torch.__version__)
+```
+
+If installed through Aanconda, activate the environment and run the following command:
+
+```
+conda list | findstr "torch"
+```
+
+If properly installed, the output should show the torch library as **pytorch** along with the version number.
 
 ### LabelMe
 
