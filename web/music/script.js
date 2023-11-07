@@ -21,14 +21,14 @@ fileInput.onchange = ({target})=>{
 
 // NOTE: Make it so that only images can be uploaded.
 
-function uploadFile(name){
+function uploadFile(name) {
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/upload.php");
-  xhr.upload.addEventListener("progress", ({loaded, total}) =>{
+  xhr.open("POST", "http://127.0.0.1:5000/upload");
+  xhr.upload.addEventListener("progress", ({ loaded, total }) => {
     let fileLoaded = Math.floor((loaded / total) * 100);
     let fileTotal = Math.floor(total / 1000);
     let fileSize;
-    (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
+    (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024 * 1024)).toFixed(2) + " MB";
     let progressHTML = `<li class="row">
                           <i class="fas fa-file-alt"></i>
                           <div class="content">
@@ -43,9 +43,9 @@ function uploadFile(name){
                         </li>`;
     uploadedArea.classList.add("onprogress");
     progressArea.innerHTML = progressHTML;
-    if(loaded == total){
-      progressArea.innerHTML = "";
-      let uploadedHTML = `<li class="row">
+    if (loaded == total) {
+      // Do not clear the progress area; simply update the progress elements
+      const uploadedHTML = `<li class="row">
                             <div class="content upload">
                               <i class="fas fa-file-alt"></i>
                               <div class="details">
@@ -55,10 +55,13 @@ function uploadFile(name){
                             </div>
                             <i class="fas fa-check"></i>
                           </li>`;
-      uploadedArea.classList.remove("onprogress");
-      uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
+      progressArea.insertAdjacentHTML("beforeend", uploadedHTML);
     }
   });
   let data = new FormData(form);
   xhr.send(data);
 }
+
+
+
+
