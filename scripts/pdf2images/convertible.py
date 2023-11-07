@@ -16,7 +16,6 @@ pdf2image installation
 from pdf2image import convert_from_path
 import os, sys
 
-
 #converts 
 def pdf_to_png(input_pdf, output_directory, dpi=200):
     images = convert_from_path(input_pdf, dpi=dpi)
