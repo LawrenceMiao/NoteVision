@@ -19,6 +19,8 @@ fileInput.onchange = ({target})=>{
   }
 }
 
+// NOTE: Make it so that only images can be uploaded.
+
 function uploadFile(name){
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "php/upload.php");
