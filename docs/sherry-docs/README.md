@@ -213,7 +213,7 @@ You must import the OS module and run the `os.remove()` function in order to del
 - [Python Delete Files](https://www.w3schools.com/python/python_file_remove.asp)
 
 ## NumPy
-NumPy, "Numerical Python," is a Python library used for working with arrays and has functions for linear algebra, fourier transform, and matrices. NumPy attempts to provide an array object that is much faster than tradition Python lists. The array object is called `ndarray` and NumPy provides many supporting functions that make working with the array object quite easy. NumPy arrays are faster than lists because they are stored in one place in memory unlike lists.
+NumPy, "Numerical Python," is a Python library used for working with arrays and has functions for linear algebra, fourier transform, and matrices. NumPy attempts to provide an array object that is much faster than tradition Python lists. The array object is called `array` and NumPy provides many supporting functions that make working with the array object quite easy. NumPy arrays are faster than lists because they are stored in one place in memory unlike lists.
 
 You can import NumPy into your applications with `import numpy as np`. The `as` keyword imports NumPy under an alias, `np`, which lets you use the package as `np` now.
 
@@ -224,9 +224,9 @@ There are many different functions NumPy contains and you can learn more by visi
 ## Pillow
 Pillow is a Python library used to manipulate and modify images. Pillow is built on top of PIL, Python Image Library, and is a fork for it since PIL was discontinued in 2021. It will allow you to do many things to images like cropping, resizing, altering the colors, and more. You can modify many images at once or run a script that automatically changes any images that are uploaded to a certain directory. Pillow supports many image formats including JPEG, PNG, TIFF, and more. 
 
-You can import Pillow into your applications with `from PIL import image`.
+You can import Pillow into your applications with `from PIL import Image`.
 
-You can read and display the image using `open()` and `show()`. On Windows to display the image, Pillow converts the image to PNG format, stores it temporarily, and then displays it. However, the image conversion is not lossless, so some properties might be gone. So, it is advised to only use this method for test purposes.
+You can read and display the image using `open()` and `show()`. To display the image, Pillow converts the image to PNG format, stores it temporarily, and then displays it. However, the image conversion is not lossless, so some properties might be gone. So, it is advised to only use this method for test purposes.
 
 Each image has a `.size`, `.format`, and `.mode` attributes. The size attribute returns the image size in a tuple that contains the width and height. The format attribute returns the image file format. The mode attribute returns the type and depth of the pixel in the image. There are many different modes provided by Pillow.
 
