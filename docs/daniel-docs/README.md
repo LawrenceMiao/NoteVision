@@ -3,6 +3,7 @@ This README.md contains the documentation process of what is required for Note V
 
 
 ## Neural Networks Introduction
+I watched these videos by *3Blue1Brown* to get a fundamental understanding of what neural networks are and how they work.
 
 ##### Video 1 - But what is a neural network? | Chapter 1, Deep learning
 Link to video: (https://www.youtube.com/watch?v=aircAruvnKk)
