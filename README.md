@@ -1,1 +1,6 @@
 # NoteVision
+
+## About
+
+## Dependency Installation
+
