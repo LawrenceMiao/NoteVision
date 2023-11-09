@@ -127,6 +127,10 @@ To install the executive application, visit the [Github Page](https://github.com
     - The activations from one layer are put in a column as a vector
 - The connections can be represented in a notationally compact way through the matrix vector product with:
     - The activations from one layer are put in a column as a vector
+- The connections can be represented in a notationally compact way through the matrix vector product with:
+    - The activations from one layer are put in a column as a vector
+- The connections can be represented in a notationally compact way through the matrix vector product with:
+    - The activations from one layer put in a column as a vector
     - The weights as a matrix where each row of the matrix shows the connections between one layer and a neuron in the next layer
     - The biases as a vector
     - Adding the bias vector to the previous matrix vector product

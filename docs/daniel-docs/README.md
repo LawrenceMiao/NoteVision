@@ -3,6 +3,7 @@ This README.md contains the documentation process of what is required for Note V
 
 
 ## Neural Networks Introduction
+I watched these videos by *3Blue1Brown* to get a fundamental understanding of what neural networks are and how they work.
 
 ##### Video 1 - But what is a neural network? | Chapter 1, Deep learning
 Link to video: (https://www.youtube.com/watch?v=aircAruvnKk)
@@ -39,7 +40,7 @@ Once Anaconda is installed visit the PyTorch website: https://pytorch.org/get-st
 Open command prompt and create a new environment. In the command prompt enter the line:
 conda create --name (environment name) (version of python). After doing so activate the new environment and paste the install commmand and follow the provided instructions.
 
-##### Basic Pytorch Information
+##### Pytorch Information
 
 - useful functions:
     - torch.rand(tuple representing its size) -> intitialize a tensor with random values 
@@ -57,3 +58,33 @@ conda create --name (environment name) (version of python). After doing so activ
     - total_item = total.item()
 - in-place operations are denoted by a "_" suffix:
     - Ex: tensor_name.add_(5)
+
+---
+
+PyTorch provides two data classes: torch.utils.data.Dataset and torch.utils.data.DataLoader. These classes allow users to use pre-loaded datasets as well as their own data. the Dataset stores the samples and their corresponding labels, and DataLoader wraps an iterable around the Dataset to make accessing samples easier. For more information on creating custom datasets visit the link: https://pytorch.org/tutorials/beginner/basics/data_tutorial.html
+
+---
+
+Neural network models are all subclasses of nn.Module as it is the base class for all neural network modules. Here is an example of initializing a neural network:
+
+class NeuralNetwork(nn.Module):  
+    
+    def __init__(self):
+        super().__init__()
+        self.flatten = nn.Flatten()
+        self.linear_relu_stack = nn.Sequential(
+            nn.Linear(28*28, 512),
+            nn.ReLU(),
+            nn.Linear(512, 512),
+            nn.ReLU(),
+            nn.Linear(512, 10),
+        )
+
+    def forward(self, x):
+        x = self.flatten(x)
+        logits = self.linear_relu_stack(x)
+        return logits
+
+To learn about what each class within the neural network does visit the link: https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html
+
+---
