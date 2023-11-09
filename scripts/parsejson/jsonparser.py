@@ -39,8 +39,9 @@ if __name__ == "__main__":
       output_json = output_json + ".json"
   else:
     output_json = input_json.replace(".json","") + "_clean.json"
-    
-  print(f"input file: {input_json}")
-  print(f"output file: {output_json}")
 
   remove_attribute(input_json, output_json)
+
+  print(f"Removed image attribute from {input_json}.")
+  print(f"input file: {input_json}")
+  print(f"output file: {output_json}")
