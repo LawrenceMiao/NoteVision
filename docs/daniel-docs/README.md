@@ -43,7 +43,7 @@ conda create --name (environment name) (version of python). After doing so activ
 ##### Pytorch Information
 
 - useful functions:
-    - torch.rand(tuple representing its size) -> intitialize a tensor with random values 
+    - torch.rand(tuple representing its size) -> intitialize a tensor with values between 0 and 1
     - torch.ones(tuple representing its size) -> intitialize a tensor with 1 as values 
     - torch.zeros(tuple representing its size) -> intitialize a tensor with 0 as values
     - tensor_name.shape -> returns the size of the tensor
@@ -86,5 +86,9 @@ class NeuralNetwork(nn.Module):
         return logits
 
 To learn about what each class within the neural network does visit the link: https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html
+
+---
+
+As mentioned earlier neural networks utilize back propagation which depends on weights that are determined by the gradient of the loss function with respect to the given weight. PyTorch contains a built-in called torch.autograd that automatically computes these gradients. There are two ways to use this built-in: (1) When initialing a new tensor set the parameter requires_grad to true [Ex: torch.randn(5, 3, requires_grad=True)]. (2) With an already existing tensor you can do x.requires_grad_(True). Where x represents the tensor. requires-grad allows the gradients for that tensor to be calculated. To actually access the gradients you would add .grad to the end of the variable containing your tensor, but before doing so you would include the line t.backward() once if working with a single graph. Where t represents the lost function. For more information on gradient tracking visit the link: https://pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html
 
 ---
