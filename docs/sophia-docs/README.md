@@ -49,9 +49,6 @@ From the website, select the following: Stable (2.1.0), Windows, Conda, Python, 
 
 Copy and run the generated command after making the selections in your terminal window or command prompt.
 
-### LabelMe
-
-
 ## Neural Networks and Deep Learning
 
 ### Chapter 1 - But what is a neural network?
