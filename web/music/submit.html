@@ -15,10 +15,16 @@
           <input class="file-input" type="file" name="file" hidden>
           <i class="fas fa-cloud-upload-alt"></i>
           <p>Browse File to Upload</p>
-          <input type="submit" value="Upload File">
         </form>
         <section class="progress-area"></section>
         <section class="uploaded-area"></section>
+        
+        <div class="popup-overlay" id="popupOverlay">
+          <div class="popup">
+            <p id="popupMessage">Error Message</p>
+            <button id="closePopup">Close</button>
+          </div>
+        </div>        
       </div>
       <script src="script.js"></script>
 </body>
