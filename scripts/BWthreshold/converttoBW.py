@@ -1,8 +1,6 @@
 '''
-input a PNG or JPEG file
-converts color image to greyscale
-apply black and white thresholding to the image
-save it as a new PNG
+input: PNG or JPEG file
+output: black and white threshold PNG image
 '''
 import sys, cv2
 
@@ -23,8 +21,8 @@ if __name__ == "__main__":
   if len(sys.argv) < 2:
     print("No input file given.")
     exit()
-  else:
-    input_img = sys.argv[1]
+
+  input_img = sys.argv[1]
     
   file_type = "." + input_img.rsplit('.', 1)[1]
 
