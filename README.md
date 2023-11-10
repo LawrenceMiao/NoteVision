@@ -64,4 +64,10 @@ brew install pyqt
 pip install labelme
 ```
 
+To install on Ubuntu,
+
+```
+sudo apt-get install labelme
+```
+
 To install the executive application, visit the [Github Page](https://github.com/wkentaro/labelme/releases) and select the appropriate file for your operating system. If you're using Windows, choose the file named `Labelme.exe` for installation. 
