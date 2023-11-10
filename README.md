@@ -13,7 +13,6 @@ Follow the instructions to install Anaconda or Miniconda on:
 - [Linux]() *issue - linux installation instructions*
 
 ### Anaconda Environment Setup (Pytorch)
-*issue - anaconda environment setup for pytorch*
 Follow the instructions below to setup PyTorch in a conda environment: 
 
 1. Create a conda environment named `test_env`
@@ -48,5 +47,21 @@ torch.__version__
 If there is output and the version is the latest stable version, then you have successfully installed PyTorch in a conda environment.
 
 ### Labelme
-*issue - labelme installation instructions*
+LabelMe is an open source image annotation tool used for object detection, classification, and labeling of images to create a dataset for computer vision model training. 
 
+To install in Aanaconda, run this in an Anaconda prompt:
+
+```
+conda create --name=labelme python=3
+source activate labelme
+pip install labelme
+```
+
+To install on macOS, 
+
+```
+brew install pyqt
+pip install labelme
+```
+
+To install the executive application, visit the [Github Page](https://github.com/wkentaro/labelme/releases) and select the appropriate file for your operating system. If you're using Windows, choose the file named `Labelme.exe` for installation. 
