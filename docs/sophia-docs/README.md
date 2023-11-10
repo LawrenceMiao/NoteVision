@@ -45,43 +45,11 @@ conda list
 
 A list of installed packages will appear if the installation was successfull. 
 
-### PyTorch
-To install the PyTorch library locally for your operating system, first head over to the [PyTorch website](https://pytorch.org/get-started/locally/). Open up your terminal window and create and activate a new conda environment by running the commands:
-
-```
-conda create --name test_env
-conda activiate test_env
-```
-
 From the website, select the following: Stable (2.1.0), Windows, Conda, Python, CPU. If you use the Linux or Mac OS, select that instead of Windows. Note that for Windows users, PyTorch only supports Windows 7 or greater. 
 
 Copy and run the generated command after making the selections in your terminal window or command prompt.
 
 To check if the installation was successful, run the following Python script in your terminal or command prompt:
-
-For Windows:
-
-```
-py
-import torch
-print(torch.__version__)
-```
-
-For Mac:
-
-```
-python3
-import torch
-print(torch.__version__)
-```
-
-If installed through Aanconda, activate the environment and run the following command:
-
-```
-conda list | findstr "torch"
-```
-
-If properly installed, the output should show the torch library as **pytorch** along with the version number.
 
 ### LabelMe
 LabelMe is an open source image annotation tool used for object detection, classification, and labeling of images to create a dataset for computer vision model training. 

@@ -14,7 +14,7 @@ if __name__ == "__main__":
   if len(sys.argv) < 2:
     print("No input file given.")
     exit()
-    
+
   input_img = sys.argv[1]
     
   file_type = "." + input_img.rsplit('.', 1)[1]
