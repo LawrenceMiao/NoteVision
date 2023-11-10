@@ -3,7 +3,7 @@
 Note Vision is an AI tool designed to help enable musicians and composers to transform physical sheet music to a MIDI file.
 
 # Instructions to Install Necessary Environments and Libraries
-Python, Anaconda, Labelme, Pytorch, NumPy, and Pillow are necessary for the development and implementation of NoteVision.
+Python, PIP, Anaconda, Labelme, Pytorch, NumPy, Pillow, and OpenCV are necessary for the development and implementation of NoteVision.
 
 ## Python
 Python often comes pre-installed, so check if your device has Python or which version of Python it runs by running the following code:
@@ -26,6 +26,10 @@ Download the appropriate version of [Anaconda](https://www.anaconda.com/download
 
 - [Windows installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)
 - [macOS installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html)
+- [Linux installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+
+## PIP
+If you have Python version 3.4 or later, PIP is included by default. However, if you do not have PIP, head to this [link](https://pip.pypa.io/en/stable/installation/) and follow the instructions. 
 
 ## LabelMe
 LabelMe is a image annotation tool that lets users annotate images and export the annotations as a JSON file.
@@ -65,40 +69,6 @@ Install app from: https://github.com/wkentaro/labelme/releases
 ### Run and Use LabelMe 
 To run LabelMe in macOS, run `labelme` in the terminal. In the context of NoteVision, LabelMe is used to annotate sheet music and the annotations are saved as a JSON file. The JSON file is then run through the JSON parser Python script in order to remove unnecessary image attributes.
 
-## PyTorch
-PyTorch is a tensor library for deep learning using GPUs and CPUs.
-
-Before installation, check to make sure you do not already have PyTorch downloaded. To check using Python code, follow the below instructions:
-
-Run Python in your terminal or command prompt.
-```
-python3
-```
-Import the torch library, check the PyTorch version:
-```
-import torch
-torch.__version__
-```
-
-If there is output and the version is the latest stable version, then you already have PyTorch. However, if you do not follow the instructions: 
-
-1. Create a conda environment named `test_env`
-```
-conda create --name test_env
-```
-2. Activate `test_env`
-```
-conda activate test_env
-```
-3. Go to this [link](https://pytorch.org/get-started/locally/) and select the following:
-  - PyTorch Build: Stable
-  - Your OS: _Your OS_
-  - Package: Conda
-  - Language: Python
-  - Compute Platform: Default (if Mac) OR CPU (if Windows/Linux)
-4. Copy and paste the command into your environment, and run it.
-5. Check that it successfully downloaded by following the instructions from above.
-
 ## NumPy
 Anaconda is a Python distribution that already has NumPy installed but if you want to install NumPy anyway then using Python and PIP, run the following command:
 ```
@@ -113,8 +83,12 @@ python3 -m pip install --upgrade Pillow
 ```
 You can find more specific instructions [here](https://pillow.readthedocs.io/en/stable/installation.html).
 
-## PIP (optional but useful)
-If you do not have PIP and would like PIP, head to this [link](https://pip.pypa.io/en/stable/installation/) and follow the instructions. Then you will be able to run the command above. 
+## OpenCV
+To install OpenCV in the `test_env` conda environment, run the following commands:
+```
+conda activate test_env
+pip install opencv-python
+```
 
 # Introduction to Neural Networks and Deep Learning
 Note: An example problem that will be used for this section is training a model to recognize handwritten digits from 0 to 9.
@@ -274,5 +248,7 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 
 ### Resources:
 - [Mask RCNN Guide](https://pytorch.org/vision/main/models/mask_rcnn.html)
-- [Mask RCNN GitHub](https://github.com/pytorch/vision/blob/main/torchvision/models/detection/mask_rcnn.py)
+- [PyTorch Mask RCNN GitHub](https://github.com/pytorch/vision/blob/main/torchvision/models/detection/mask_rcnn.py)
+- [Okery PyTorch Simple Mask RCNN GitHub](https://github.com/Okery/PyTorch-Simple-MaskRCNN)
+- [multimodallearning Mask RCNN GitHub](https://github.com/multimodallearning/pytorch-mask-rcnn)
 - [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
