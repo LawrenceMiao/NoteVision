@@ -31,7 +31,7 @@ def generate_output_directory(input_directory):
     
     new_directory = str(input_directory).split('/')[-1]
     os.makedirs(new_directory)
-    output_directory = os.getcwd() + '/' + new_directory  # Replace with the directory where you want to save the PNG images
+    output_directory = os.getcwd() + '/' + new_directory.split(".")[-1]  # Replace with the directory where you want to save the PNG images
     
     return output_directory
 
