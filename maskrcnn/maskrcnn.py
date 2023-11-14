@@ -4,6 +4,8 @@ from torchvision.models.detection import maskrcnn_resnet50_fpn, MaskRCNN_ResNet5
 
 # load dataset
 # train model
+def train_model(model, dataset, params_etc):
+    return "bruh"
 
 # test mode
 def test_model(model, input):
