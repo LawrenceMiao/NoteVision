@@ -87,6 +87,25 @@ function uploadFile(name) {
           progressArea.insertAdjacentHTML("beforeend", uploadedHTML);
         }
       });
+      
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            // File uploaded successfully, handle the response
+            let uploadedFilename = xhr.responseText;
+            console.log("Uploaded");
+        
+            // Use getElementsByClassName since the element has a class, not an ID
+            let postUploadElement = document.getElementsByClassName("post-upload")[0];
+        
+            // Set the display property to "block"
+            postUploadElement.style.display = "block";
+        
+            console.log("success");
+        }
+        
+        }
+      };
 
       let data = new FormData();
       data.append('file', file); // Append the file to the FormData
