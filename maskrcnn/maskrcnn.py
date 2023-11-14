@@ -1,17 +1,36 @@
 # import stuff
 import torch
-from torchvision.models import detection
+from torchvision.models.detection import maskrcnn_resnet50_fpn, MaskRCNN_ResNet50_FPN_Weights, faster_rcnn
 
 
-# define model
-# load new model
-
-model = detection.maskrcnn_resnet50_fpn(weights=detection.MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
-model.eval()
-print(model)
-x = [torch.rand(3, 300, 400), torch.rand(3, 500, 400)]
-predictions = model(x)
-print(predictions)
 # load dataset
 # train model
 # test model
+
+
+def maskrcnn_setup(num_classes):
+
+    # load pretrained maskrcnn model from pytorch library
+    model = maskrcnn_resnet50_fpn(weights=MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
+
+    # set number of classes in prediction
+    in_features = model.roi_heads.box_predictor.cls_score.in_features 
+    model.roi_heads.box_predictor=faster_rcnn.FastRCNNPredictor(in_features,num_classes=2)
+    
+    return model
+
+
+if __name__ == "__main__":
+
+    # get device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Available device: {device}")
+
+    # load model with pretrained weights
+    model = maskrcnn_setup(num_classes=2)
+
+    # evaluation mode
+    model.eval()
+
+    x = [torch.rand(3, 300, 400), torch.rand(3, 500, 400)]
+    predictions = model(x) 
