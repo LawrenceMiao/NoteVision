@@ -49,6 +49,16 @@
     justify-content: space-between;
 }
 
+.navbar2{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
 button {
     color: #fbfcfd;
     padding: 10px 25px;
