@@ -73,15 +73,20 @@ Designed and implemented a Python script that took in a path to a PDF file as a 
 >>
 >>    (2) pip install pdf2image
 >
->    # mac
->   (1) brew install poppler
->   (2) pip install pdf2image
+>    **mac** 
+>>   (1) brew install poppler 
+>>
+>>   (2) pip install pdf2image
+>>
+>    **windows**
+>>    (1) conda install -c conda-forge pdf2image
+>
+> 
 
-    # windows
-    (1) conda install -c conda-forge pdf2image
-
-
-
+## Yolo v5 Instruction
+1. git clone https://github.com/ultralytics/yolov5  # clone
+cd yolov5
+pip install -r requirements.txt  # install
 
 
 
