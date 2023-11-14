@@ -35,7 +35,7 @@ def upload_file():
             "Access-Control-Allow-Methods": "POST",
         }
 
-        return response, 200, response_headers
+        return file.filename, 200
 
 if __name__ == '__main__':
     app.run()

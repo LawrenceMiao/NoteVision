@@ -19,7 +19,22 @@ fileInput.onchange = ({target})=>{
   }
 }
 
-// NOTE: Make it so that only images can be uploaded.
+// Popup shows when an error message is hit
+
+function displayPopup(message) {
+  const popupOverlay = document.getElementById('popupOverlay');
+  const popupMessage = document.getElementById('popupMessage');
+  popupMessage.innerText = message;
+
+  popupOverlay.style.display = 'flex';
+
+  const closePopup = document.getElementById('closePopup');
+  closePopup.addEventListener('click', () => {
+    popupOverlay.style.display = 'none';
+  });
+}
+
+// Check and make sure the only files being submitted are image files.
 
 function uploadFile(name) {
   let fileInput = document.querySelector('.file-input'); // Assuming file input has a class 'file-input'
@@ -85,18 +100,6 @@ function uploadFile(name) {
 }
 
 
-function displayPopup(message) {
-  const popupOverlay = document.getElementById('popupOverlay');
-  const popupMessage = document.getElementById('popupMessage');
-  popupMessage.innerText = message;
-
-  popupOverlay.style.display = 'flex';
-
-  const closePopup = document.getElementById('closePopup');
-  closePopup.addEventListener('click', () => {
-    popupOverlay.style.display = 'none';
-  });
-}
 
 
 
