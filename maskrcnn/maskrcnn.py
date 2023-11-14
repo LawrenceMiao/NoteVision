@@ -11,7 +11,7 @@ model.eval()
 print(model)
 x = [torch.rand(3, 300, 400), torch.rand(3, 500, 400)]
 predictions = model(x)
-
+print(predictions)
 # load dataset
 # train model
 # test model
