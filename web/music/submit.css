@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body{
   display: flex;
   align-items: center;
@@ -18,13 +19,20 @@ body{
   color: #fff;
   background: #6990F2;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .wrapper{
-  width: 430px;
+  width: 100%;
   background: #fff;
   border-radius: 5px;
   padding: 30px;
   box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
 }
+
 .wrapper header{
   color: #6990F2;
   font-size: 27px;
@@ -150,4 +158,16 @@ section .details span{
   align-items: center;
   bottom: 2.5vh;
   color: #6990F2;
+}
+
+.post-upload{
+  display: none;
+  width: 100%;
+  background: black;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  height: 75vh;
 }
