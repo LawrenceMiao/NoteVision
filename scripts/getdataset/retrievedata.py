@@ -7,4 +7,6 @@ def download_dataset():
   print("DOWNLOADING")
 
 if __name__ == "__main__":
-  download_dataset()
+  response = requests.get("http://api.open-notify.org/astros.json")
+  print(response)
+  # download_dataset()
