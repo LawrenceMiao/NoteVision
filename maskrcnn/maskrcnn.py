@@ -4,8 +4,27 @@ from torchvision.models.detection import maskrcnn_resnet50_fpn, MaskRCNN_ResNet5
 
 # load dataset
 # train model
-def train_model(model, dataset, params_etc):
-    return "bruh"
+def train_model(model, num_epochs, optimizer, dataset):
+
+    if not model.training:
+         raise Exception("Model is not in train mode while training.")
+
+    for i in range(num_epochs):
+        images, targets = loadData()
+        images = list(image.to(device) for image in images)
+        targets = [{k: v.to(device) for k,v in t.items()} for t in targets]
+        
+        optimizer.zero_grad()
+        loss_dict = model(images, targets)
+        losses = sum(loss for loss in loss_dict.values())
+        
+        losses.backward()
+        optimizer.step()
+        
+        print(i,'loss:', losses.item())
+        if i%200==0:
+                torch.save(model.state_dict(), str(i)+".torch")
+                print("Save model to:",str(i)+".torch")
 
 # test mode
 def test_model(model, input):
@@ -32,6 +51,14 @@ if __name__ == "__main__":
 
     # load model with pretrained weights
     model = maskrcnn_setup(num_classes=2)
+
+    model.to(device)
+
+    
+    optimizer = torch.optim.AdamW(params=model.parameters(), lr=1e-5)
+
+    model.train()
+    train_model(model, num_epochs=5, optimizer, dataset)
 
     # evaluation mode
     model.eval()
