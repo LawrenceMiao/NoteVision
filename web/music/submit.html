@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="submit.css">
-    
-    <title>Upload File</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="submit.css">
+
+  <title>Upload File</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body>
+  <div class="container">
     <div class="wrapper">
-        <header>Upload Music Sheet</header>
-        <form action="#">
-          <input class="file-input" type="file" name="file" hidden>
-          <i class="fas fa-cloud-upload-alt"></i>
-          <p>Browse File to Upload</p>
-          <input type="submit" value="Upload File">
-        </form>
-        <section class="progress-area"></section>
-        <section class="uploaded-area"></section>
+      <header>Upload Music Sheet</header>
+      <form action="#">
+        <input class="file-input" type="file" name="file" hidden>
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Browse File to Upload</p>
+      </form>
+      <section class="progress-area"></section>
+      <section class="uploaded-area"></section>
+
+      <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+          <p id="popupMessage">Error Message</p>
+          <button id="closePopup">Close</button>
+        </div>
       </div>
-      <script src="script.js"></script>
+    </div>
+
+    <div class="post-upload">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
