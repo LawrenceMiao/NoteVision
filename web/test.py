@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 
 
@@ -9,33 +9,29 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return render_template('music/submit.html')
+    return render_template('../music/submit.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
-    if 'file' not in request.files:
-        return "No file part"
+    if request.method == 'GET':
+        return render_template('../music/submit.html')
+    elif request.method == 'POST':
+        if 'file' not in request.files:
+            return "No file part"
 
-    file = request.files['file']
-    if file.filename == '':
-        return "No selected file"
+        file = request.files['file']
+        if file.filename == '':
+            return "No selected file"
 
-    if file:
-        # Define the folder where you want to save the uploaded files
-        upload_folder = 'uploads'
+        if file:
+            # Define the folder where you want to save the uploaded files
+            upload_folder = 'uploads'
 
-        # Save the file to the specified folder
-        file.save(os.path.join(upload_folder, file.filename))
+            # Save the file to the specified folder
+            file_path = (os.path.join(upload_folder, file.filename))
+            file.save(file_path)
 
-        response = "File uploaded successfully"
-    
-        # Set CORS headers
-        response_headers = {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST",
-        }
-
-        return response, 200, response_headers
+            return send_file(file_path, mimetype='image/*')
 
 if __name__ == '__main__':
     app.run()
