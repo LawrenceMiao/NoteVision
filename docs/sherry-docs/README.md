@@ -251,6 +251,24 @@ HTTP has a set of __request methods__ that indicate desired actions to be perfor
 - [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 - [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 
+# Git Large File System
+Git Large File System (LFS) replaces large files/folders like datasets with text pointers in Git and stores the actual file content on a remote server like GitHub.com or GitHub Enterprise.
+
+Important features of Git LFS include same access controls/permissions, Git workflow, more repository space, and faster cloning/fetching. 
+
+To start using Git LFS, you need to download the Git command line extension:
+```
+git lfs install
+```
+In the Git repository you want to use Git LFS in, select the file types you would like Git LFS to manage by running (replace `file type` with a file type):
+```
+git lfs track "*.'file type'"
+git add .gitattributes
+```
+Note that by defining the tracked file types, any pre-existing files will not get added to Git LFS. To convert any prior files, use the [`git lfs migrate`](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.adoc) command.
+
+After set up, you can just commit and push as you normally would and Git LFS will work.
+
 # Mask R-CNN Model
 A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
 - Convolutional layer
