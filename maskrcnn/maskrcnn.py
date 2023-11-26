@@ -9,85 +9,70 @@ import numpy as np
 from PIL import Image
 import json
 
-def load_dataset(img_path, json_path, mask_path=None):
-    pass
-
-class yourmom:
-    def __init__(self, img_dir, json_dir, patch_dim: (int, int, int), mask_path=None):
-        self.pages = []
-        self.patch_dim = patch_dim
-        self._index = 0
-        for file in os.listdir(img_dir):
-            if file.split(".")[-2] + ".json" in os.listdir(json_dir):
-                img_path = os.path.join(img_dir, file)
-                json_path = os.path.join(json_dir, file.split(".")[-2] + ".json")
-                with open(json_path, 'r') as json_file:
-                    data = json.load(json_file)
-                    img_size = (data.imageWidth, data.imageHeight)
-                self.pages.append({
-                    "img_path": img_path,
-                    "json_path": json_path,
-                    "img_size": img_size
-                })
-       
-    def __getitem__(self, index):
-        def num_patches(patch_size: (int, int), img_size: (int, int)):
             
+# def loadData(batch_size=2):
+#     batch_imgs = []
+#     batch_data = []
+#     for i in range(batch_size):
+#         idx = random.randint(0, len(imgs)-1)
+#         img = cv2.imread(os.path.join(imgs[idx], "Image.jpg"))
+#         img = cv2.resize(img, imageSize, cv2.INTER_LINEAR)
+#         maskDir = os.path.join(imgs[idx], "Vessels")
+#         masks = []
+#         for mskName in os.listdir(maskDir):
+#             vesMask = (cv2.imread(maskDir+'/'+mskName, 0) > 0).astype(np.uint8)  # Read vesse instance mask
+#             vesMask = cv2.resize(vesMask,imageSize,cv2.INTER_NEAREST)
+#             masks.append(vesMask)# get bounding box coordinates for each mask
+#         num_objs = len(masks)
+#         if num_objs==0: 
+#             return loadData() # if image have no objects just load another image
+#         boxes = torch.zeros([num_objs, 4], dtype=torch.float32)
+#         for i in range(num_objs):
+#             x, y, w, h = cv2.boundingRect(masks[i])
+#             boxes[i] = torch.tensor([x, y, x+w, y+h])
+#         masks = torch.as_tensor(masks, dtype=torch.uint8)
+#         img = torch.as_tensor(img, dtype=torch.float32)
+#         data = {}
+#         data["boxes"] = boxes
+#         data["labels"] =  torch.ones((num_objs,), dtype=torch.int64)   # there is only one class
+#         data["masks"] = masks
+#         batch_imgs.append(img)
+#         batch_data.append(data)  # load images and masks
+#     batch_imgs = torch.stack([torch.as_tensor(d) for d in batch_imgs], 0)
+#     batch_imgs = batch_imgs.swapaxes(1, 3).swapaxes(2, 3)
+#     return batch_imgs, batch_data
 
-        for i in self.pages:
-            x = i.img_size[0] // self.patch_dim[2]
-            y = i.img_size[1] // self.patch_dim[3]
-            num_patches = x*y + x + y + 1
-            if num_patches <= index:
-                index -= num_patches
-            else:
-                if index == 0:
-                    corner
-                elif: 
-
-
-
-    # def __next__(self):
-    #     if self._index < len(self.data):
-    #         result = self.data[self._index]
-    #         self._index += 1
-    #         return result
-    #     else:
-    #         raise StopIteration
-
-            
 def loadData(batch_size=2):
-    batch_imgs=[]
-    batch_data=[]
-    for i in range(batch_size):
-        idx = random.randint(0, len(imgs)-1)
-        img = cv2.imread(os.path.join(imgs[idx], "Image.jpg"))
-        img = cv2.resize(img, imageSize, cv2.INTER_LINEAR)
-        maskDir = os.path.join(imgs[idx], "Vessels")
-        masks = []
-        for mskName in os.listdir(maskDir):
-            vesMask = (cv2.imread(maskDir+'/'+mskName, 0) > 0).astype(np.uint8)  # Read vesse instance mask
-            vesMask = cv2.resize(vesMask,imageSize,cv2.INTER_NEAREST)
-            masks.append(vesMask)# get bounding box coordinates for each mask
-        num_objs = len(masks)
-        if num_objs==0: 
-            return loadData() # if image have no objects just load another image
-        boxes = torch.zeros([num_objs, 4], dtype=torch.float32)
-        for i in range(num_objs):
-            x, y, w, h = cv2.boundingRect(masks[i])
-            boxes[i] = torch.tensor([x, y, x+w, y+h])
-        masks = torch.as_tensor(masks, dtype=torch.uint8)
+    batch_imgs = []
+    batch_data = []
+    for i in range(len(batch_size)):
+        idx = random.randrange(0, len(os.listdir("data/boxes")))
+        img = cv2.imread(f"data/imgs/patch-{idx}.png")
+        # img = cv2.resize(img, imageSize, cv2.INTER_LINEAR)
         img = torch.as_tensor(img, dtype=torch.float32)
-        data = {}
-        data["boxes"] = boxes
-        data["labels"] =  torch.ones((num_objs,), dtype=torch.int64)   # there is only one class
-        data["masks"] = masks
+
+        boxes = np.load(f"data/boxes/patch-{idx}.npy")
+        boxes = torch.as_tensor(boxes, dtype=torch.int64)
+
+        labels = torch.ones((len(boxes),), dtype=torch.int64)
+
+        masks = []
+        for box in boxes:
+            mask = np.zeros((img.size[1], img.size[0]), dtype=np.uint8)
+            cv2.rectangle(img, (box[0:2]), (boxes[2:4]), color=255, thickness=cv2.FILLED)
+            masks.append(mask)
+        masks = torch.as_tensor(masks, dtype=torch.uint8)
+
+        data = {
+            "boxes": boxes,
+            "labels": labels,
+            "masks": masks
+        }
         batch_imgs.append(img)
-        batch_data.append(data)  # load images and masks
+        batch_data.append(data)
     batch_imgs = torch.stack([torch.as_tensor(d) for d in batch_imgs], 0)
     batch_imgs = batch_imgs.swapaxes(1, 3).swapaxes(2, 3)
     return batch_imgs, batch_data
-
 
 # train model
 def train_model(model, num_epochs, optimizer, dataset):
