@@ -50,12 +50,12 @@ button {
 
 .follow:hover {
     background-color: white;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .follow:hover .hidden-link {
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
 }
-
 
 .content {
     color: #fbfcfd;
@@ -88,7 +88,7 @@ h1 {
     cursor: pointer;
 }
 
-.social-links img, .useful-links img {
+/* .social-links img, .useful-links img {
     width: 25px;
     margin: 5px auto;
     cursor: pointer;
@@ -100,6 +100,12 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+} */
+
+.useful-links img {
+    width: 25px;
+    margin: 5px auto;
+    cursor: pointer;
 }
 
 .useful-links {
