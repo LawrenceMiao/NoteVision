@@ -17,7 +17,7 @@ body{
 
 ::selection{
   color: #fff;
-  background: #6990F2;
+  background: #00545d;
 }
 
 .container {
@@ -34,7 +34,7 @@ body{
 }
 
 .wrapper header{
-  color: #6990F2;
+  color: #00545d;
   font-size: 27px;
   font-weight: 600;
   text-align: center;
@@ -48,10 +48,10 @@ body{
   justify-content: center;
   flex-direction: column;
   border-radius: 5px;
-  border: 2px dashed #6990F2;
+  border: 2px dashed #00545d;
 }
 form :where(i, p){
-  color: #6990F2;
+  color: #00545d;
 }
 form i{
   font-size: 50px;
@@ -72,7 +72,7 @@ section .row{
   justify-content: space-between;
 }
 section .row i{
-  color: #6990F2;
+  color: #00545d;
   font-size: 30px;
 }
 section .details span{
@@ -98,7 +98,7 @@ section .details span{
 .content .progress-bar .progress{
   height: 100%;
   width: 0%;
-  background: #6990F2;
+  background: #00545d;
   border-radius: inherit;
 }
 .uploaded-area{
@@ -146,7 +146,7 @@ section .details span{
   border-radius: 5px;
   text-align: center;
   height: 15vh;
-  color: #6990F2;
+  color: #00545d;
 }
 
 #closePopup {
@@ -157,7 +157,7 @@ section .details span{
   width: 5vw;
   align-items: center;
   bottom: 2.5vh;
-  color: #6990F2;
+  color: #00545d;
 }
 
 .post-upload{
@@ -211,7 +211,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #4A98F7;
+  background: #00545d;
 }
 .container{
   display: flex;
