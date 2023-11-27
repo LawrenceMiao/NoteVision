@@ -108,26 +108,19 @@ There are around seven hundred eighty four neurons that make up the first layer 
 
 However, there needs to be a way to combine pixels into edges, edges into patterns, patterns into digits. This is done with weights and weighted sum. Weights are assigned to each one of the edges between the neuron and the neurons from the first layer. By taking the weighted sum of all the pixels amounts to the sum of pixel values that matter. To improve edge detection of a digit, incorporate negative weights. Through negative weights, the sum is largest when the pixels are bright and the surrounding pixels are dark. 
 
-However, this weighted sum needs to be between 0 and 1 for activation, so it is best to use some function that squishes any input into a number between 0 and 1. A common function that achieves this is the sigmoid function that basically simplifies to very negative inputs are close to 0 and very positive inputs are close to 1. 
-
-<!-- not done -->
+This weighted sum needs to be between 0 and 1 for activation, so it is best to use some function that squishes any input into a number between 0 and 1. A common function that achieves this is the sigmoid function that basically simplifies to very negative inputs are close to 0 and very positive inputs are close to 1. In order to make sure a weight is significant, there should be a bias. The weights indicates what pixel pattern is seen by a layer and the bias indicates how high the weighted sum needs to be to be significant. There are thousands of weights and biases and part of the learning is to tweak each weight and bias. However, tweaking every single weight and bias individually would take a lot of time and effort, so the AI model is responsible for learning what to change. 
 
 ## Gradient Descent
 
-The cost of the network allows it to calculate the negative gradient in order for proper learning.
+Gradient descent is used to help train machine learning models and neural networks. Backpropagation is the efficient algorithm for computing the gradient descent. The cost function within gradient descent is an instrument that gauges accuracy every iteration of parameter updates. The model will adjust its parameters until it yiels the smallest possible error. The purpose of gradient descent is to minimize the cost function and in order to do this, it needs two things: direction and learning rate. These determine the partial derivative calculations of future iterations, allowing it to gradually arrive at a local or global minimum. There are multiple types of gradient descent like stochastic, batch, etc. 
 
-<!-- not done -->
+There are many issues with using gradient descent for optimization. Some of the problems include local mimima, saddles points, and vanishing and exploding gradients. Gradient descent can easily find global minimum in convex problems but struggles to in nonconvex problems because it stops learning when the slope is close or at zero. Vanishing gradients are gradients that are too small. As the model moves towards backpropagation, the gradient gradually becomes smaller causing earlier layers to learn more slowly. The weight parameters update until they are insignificant which results in an algorithm that is no longer learning. Exploding gradients occur when the gradient is too large which results in an unstable model. The weight parameters become too large where they will be represented as NaN. However, gradient descent is still good for helping ML models learn. 
 
-## Backprogation
-
-Backpropagation is the algorithm for computing the gradient descent. 
-
-<!-- not done -->
-
-### Videos:
+### Sources:
 - [Chapter 1 | But what is a neural network?](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
 - [Chapter 2 | Gradient descent, how neural networks learn](https://youtu.be/IHZwWFHWa-w?si=bdLgCjGBCk_S1ENU)
 - [Chapter 3 | What is backpropagation really doing?](https://youtu.be/Ilg3gGewQ5U?si=7DkytDDaGr3OIsuv)
+- [What is gradient descent?](https://www.ibm.com/topics/gradient-descent)
 
 # Relevant Python Information
 
@@ -258,6 +251,24 @@ HTTP has a set of __request methods__ that indicate desired actions to be perfor
 - [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 - [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 
+# Git Large File System
+Git Large File System (LFS) replaces large files/folders like datasets with text pointers in Git and stores the actual file content on a remote server like GitHub.com or GitHub Enterprise.
+
+Important features of Git LFS include same access controls/permissions, Git workflow, more repository space, and faster cloning/fetching. 
+
+To start using Git LFS, you need to download the Git command line extension:
+```
+git lfs install
+```
+In the Git repository you want to use Git LFS in, select the file types you would like Git LFS to manage by running (replace `file type` with a file type):
+```
+git lfs track "*.'file type'"
+git add .gitattributes
+```
+Note that by defining the tracked file types, any pre-existing files will not get added to Git LFS. To convert any prior files, use the [`git lfs migrate`](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.adoc) command.
+
+After set up, you can just commit and push as you normally would and Git LFS will work.
+
 # Mask R-CNN Model
 A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
 - Convolutional layer
@@ -290,3 +301,4 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 - [Okery PyTorch Simple Mask RCNN GitHub](https://github.com/Okery/PyTorch-Simple-MaskRCNN)
 - [multimodallearning Mask RCNN GitHub](https://github.com/multimodallearning/pytorch-mask-rcnn)
 - [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
+- [Fine-tune PyTorch Pre-trained Mask-RCNN](https://haochen23.github.io/2020/06/fine-tune-mask-rcnn-pytorch.html)
