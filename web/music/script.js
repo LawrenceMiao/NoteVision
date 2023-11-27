@@ -1,90 +1,24 @@
-const form = document.querySelector("form"),
 fileInput = document.querySelector(".file-input"),
 progressArea = document.querySelector(".progress-area"),
 uploadedArea = document.querySelector(".uploaded-area");
+const fileUploadBtn = document.querySelector(".file-upload-btn");
 
-form.addEventListener("click", () =>{
+fileUploadBtn.addEventListener("click", () => {
   fileInput.click();
 });
 
-fileInput.onchange = ({target})=>{
-  let file = target.files[0];
-  if(file){
-    let fileName = file.name;
-    if(fileName.length >= 12){
-      let splitName = fileName.split('.');
-      fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
+fileInput.onchange = (event) => {
+    event.preventDefault();  // Prevent the default form submission
+  
+    let fileInput = event.target;
+    let file = fileInput.files?.[0];
+    if (file) {
+      uploadFile(file);
     }
-    uploadFile(fileName);
-  }
-}
+};
+  
 
-// NOTE: Make it so that only images can be uploaded.
-
-function uploadFile(name) {
-  let fileInput = document.querySelector('.file-input'); // Assuming file input has a class 'file-input'
-
-  // Get the selected file
-  let file = fileInput.files[0];
-
-  // Check if a file is selected
-  if (file) {
-    // Check if the selected file is an image
-    if (file.type.startsWith('image/')) {
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://127.0.0.1:5000/upload");
-
-      xhr.upload.addEventListener("progress", ({ loaded, total }) => {
-        let fileLoaded = Math.floor((loaded / total) * 100);
-        let fileTotal = Math.floor(total / 1000);
-        let fileSize;
-        (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024 * 1024)).toFixed(2) + " MB";
-        let progressHTML = `<li class="row">
-                              <i class="fas fa-file-alt"></i>
-                              <div class="content">
-                                <div class="details">
-                                  <span class="name">${name} • Uploading</span>
-                                  <span class="percent">${fileLoaded}%</span>
-                                </div>
-                                <div class="progress-bar">
-                                  <div class="progress" style="width: ${fileLoaded}%"></div>
-                                </div>
-                              </div>
-                            </li>`;
-        const progressArea = document.getElementById('progressArea'); // Assuming there's an element with id 'progressArea'
-        const uploadedArea = document.getElementById('uploadedArea'); // Assuming there's an element with id 'uploadedArea'
-
-        uploadedArea.classList.add("onprogress");
-        progressArea.innerHTML = progressHTML;
-
-        if (loaded == total) {
-          // Do not clear the progress area; simply update the progress elements
-          const uploadedHTML = `<li class="row">
-                                <div class="content upload">
-                                  <i class="fas fa-file-alt"></i>
-                                  <div class="details">
-                                    <span class="name">${name} • Uploaded</span>
-                                    <span class="size">${fileSize}</span>
-                                  </div>
-                                </div>
-                                <i class="fas fa-check"></i>
-                              </li>`;
-          progressArea.insertAdjacentHTML("beforeend", uploadedHTML);
-        }
-      });
-
-      let data = new FormData();
-      data.append('file', file); // Append the file to the FormData
-
-      xhr.send(data);
-    } else {
-      // Show an error message for non-image files
-      displayPopup("Please select an image file.");
-    }
-  }
-}
-
-
+// Popup shows when an error message is hit
 function displayPopup(message) {
   const popupOverlay = document.getElementById('popupOverlay');
   const popupMessage = document.getElementById('popupMessage');
@@ -97,6 +31,60 @@ function displayPopup(message) {
     popupOverlay.style.display = 'none';
   });
 }
+
+// Check and make sure the only files being submitted are image files.
+function uploadFile(file) {
+    // Check if the selected file is an image
+    if (file.type.startsWith('image/')) {
+      // Create a FormData object to send the file as a binary payload
+      let formData = new FormData();
+      formData.append('file', file);
+  
+      // Make an AJAX request to the server
+      fetch('http://127.0.0.1:5000/upload', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(function (response) {
+          return response.blob();
+        })
+        .then(function (blob) {
+          var url = URL.createObjectURL(blob);
+          // Handle the response text if needed
+          console.log(url);
+          // Continue with the rest of your logic
+          const postUploadElement = document.querySelector('.post-upload');
+          postUploadElement.style.display = 'block';
+
+          
+                // Update the HTML with the prediction result
+                document.getElementById("predictionText").textContent = "Prediction: ";
+          
+                // Display the prediction popup
+                var modal = document.getElementById("predictionPopup");
+                var span = document.getElementsByClassName("close")[0];
+                var predictionText = document.getElementById("predictionText");
+          
+                predictionText.textContent = prediction;
+                modal.style.display = "block";
+          
+                // Close the prediction popup when the user clicks the close button
+                span.onclick = function () {
+                  modal.style.display = "none";
+                };
+          
+                // Close the prediction popup when the user clicks outside the modal content
+                window.onclick = function (event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                };
+        })
+    } else {
+      displayPopup('Please Upload Image File.');
+    }
+}
+
 
 
 

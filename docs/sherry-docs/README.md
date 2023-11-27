@@ -108,26 +108,19 @@ There are around seven hundred eighty four neurons that make up the first layer 
 
 However, there needs to be a way to combine pixels into edges, edges into patterns, patterns into digits. This is done with weights and weighted sum. Weights are assigned to each one of the edges between the neuron and the neurons from the first layer. By taking the weighted sum of all the pixels amounts to the sum of pixel values that matter. To improve edge detection of a digit, incorporate negative weights. Through negative weights, the sum is largest when the pixels are bright and the surrounding pixels are dark. 
 
-However, this weighted sum needs to be between 0 and 1 for activation, so it is best to use some function that squishes any input into a number between 0 and 1. A common function that achieves this is the sigmoid function that basically simplifies to very negative inputs are close to 0 and very positive inputs are close to 1. 
-
-<!-- not done -->
+This weighted sum needs to be between 0 and 1 for activation, so it is best to use some function that squishes any input into a number between 0 and 1. A common function that achieves this is the sigmoid function that basically simplifies to very negative inputs are close to 0 and very positive inputs are close to 1. In order to make sure a weight is significant, there should be a bias. The weights indicates what pixel pattern is seen by a layer and the bias indicates how high the weighted sum needs to be to be significant. There are thousands of weights and biases and part of the learning is to tweak each weight and bias. However, tweaking every single weight and bias individually would take a lot of time and effort, so the AI model is responsible for learning what to change. 
 
 ## Gradient Descent
 
-The cost of the network allows it to calculate the negative gradient in order for proper learning.
+Gradient descent is used to help train machine learning models and neural networks. Backpropagation is the efficient algorithm for computing the gradient descent. The cost function within gradient descent is an instrument that gauges accuracy every iteration of parameter updates. The model will adjust its parameters until it yiels the smallest possible error. The purpose of gradient descent is to minimize the cost function and in order to do this, it needs two things: direction and learning rate. These determine the partial derivative calculations of future iterations, allowing it to gradually arrive at a local or global minimum. There are multiple types of gradient descent like stochastic, batch, etc. 
 
-<!-- not done -->
+There are many issues with using gradient descent for optimization. Some of the problems include local mimima, saddles points, and vanishing and exploding gradients. Gradient descent can easily find global minimum in convex problems but struggles to in nonconvex problems because it stops learning when the slope is close or at zero. Vanishing gradients are gradients that are too small. As the model moves towards backpropagation, the gradient gradually becomes smaller causing earlier layers to learn more slowly. The weight parameters update until they are insignificant which results in an algorithm that is no longer learning. Exploding gradients occur when the gradient is too large which results in an unstable model. The weight parameters become too large where they will be represented as NaN. However, gradient descent is still good for helping ML models learn. 
 
-## Backprogation
-
-Backpropagation is the algorithm for computing the gradient descent. 
-
-<!-- not done -->
-
-### Videos:
+### Sources:
 - [Chapter 1 | But what is a neural network?](https://youtu.be/aircAruvnKk?si=bKe3I8pQEtDHPTxS)
 - [Chapter 2 | Gradient descent, how neural networks learn](https://youtu.be/IHZwWFHWa-w?si=bdLgCjGBCk_S1ENU)
 - [Chapter 3 | What is backpropagation really doing?](https://youtu.be/Ilg3gGewQ5U?si=7DkytDDaGr3OIsuv)
+- [What is gradient descent?](https://www.ibm.com/topics/gradient-descent)
 
 # Relevant Python Information
 
@@ -219,6 +212,62 @@ There are many more complex operations not listed here. You can find them by loo
 ### Sources: 
 - [Python Tutorial: Image Manipulation with Pillow](https://www.youtube.com/watch?v=6Qs3wObeWwc)
 - [Python Pillow Tutorial](https://www.geeksforgeeks.org/python-pillow-tutorial/)
+# HTTP
+
+## What is HTTP
+
+HTTP is a protocol that fetches resources like HTML documents, JSON data, images, and more. It is the foundation for any exchange of data on the Web and is a client-server protocol. The requests are initiated by the recipient which is usually a Web browser. Clients and servers communicate by exchanging individual messages, the messages sent by the client are __requests__ and the server messages are __responses__. HTTP can be used to fetch videos, post content to servers, and parts of documents to update pages. 
+
+Usually the client is a Web browser, but it can be anything. Each request is sent to a server. Between the server and client there are many parts that perform different operations and act as caches before a response is sent back. There are more computers between a browser and server like modems, routers, etc. The Web is layered so those computers and parts are hidden in the network and transport layer. HTTP is the application layer and is on top of the rest. 
+
+The client, also known as the user-agent, is any tool that acts on behalf of users. The user-agent is always the entitiy initiating requests. To display a Web page, the user-agent sends a request to fetch the HTML document, parses the file, makes additional requests, lays out information to show, and resources contained in the page. The user-agent combines all these resources to present a completed document: the Web page. 
+
+The standard file format for creating and presenting a Web page is a hypertext document or HTML. Some parts of the displayed content are links which can be activated to fetch new Web pages. This allows users to direct their user-agent and navigate through the Web. 
+
+A server may be a collection of servers that share load or other software that may partially or totally generate HTML on demand. A server is not always a single machine but several isntances on the same machine. They could even share the same IP address. 
+
+Between a server and a Web browser, there are many computers and machines that are relaying HTTP messages due to the layered design of the Web. Most of those computers and machines operate at the network, transport, or physical levels. Proxies operate on the application layers and can perform many functions like caching, filtering, authicating, logging, and load balancing. 
+
+HTTP is designed to be simple and readable which provides easier testing to developers. New functionality can be introduced easily with HTTP headers. HTTP cookies allow for stateful using header extensibility as HTTP is stateless. The cookies let each HTTP request share the same state. Connections are out of scope for HTTP but it only requires the connection to be reliable . The two most common transport protocols are TCP and UDP. TCP is more reliable and therefore is the standard usually. 
+
+## HTTP Flow
+When an user-agent wants to communicate with a server, the following steps occur:
+1. Open a TCP connection
+2. Send an HTTP message
+3. Read the server response
+4. Close or reuse the connection
+Several requests can be sent if HTTP pipelining is activated. 
+
+## HTTP Messages
+There are two kinds of messages: requests, responses. A request consists of an HTTP method, resource path, HTTP protocol version, optional headers, and a body. The HTTP method could be `GET`, `POST`, `OPTIONS`, etc. HTTP methods are explored more in depth below. A response consists of HTTP protocol version, status code, status message, headers, and an optional body.
+
+## HTTP Request Methods
+HTTP has a set of __request methods__ that indicate desired actions to be performed for given resources. Request methods can be safe, cacheable, or idempotent. An HTTP request method is safe if the state of the server is unchanged. It is idempotent if the indented effect on the server for one request is the same as making several identical requests. All safe methods are idempotent. A response is cacheable if it can be stored to be restrieved and used later also known as cached. Some methods are listed below:
+- `GET`: The `GET` method requests the specified resource's representation.
+- `POST`: The `POST` method submits an entity to th specified resource which usually causes a change in state or affects the server.
+- `DELETE`: The `DELETE` method deletes the specified resource.
+
+### Sources:
+- [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+# Git Large File System
+Git Large File System (LFS) replaces large files/folders like datasets with text pointers in Git and stores the actual file content on a remote server like GitHub.com or GitHub Enterprise.
+
+Important features of Git LFS include same access controls/permissions, Git workflow, more repository space, and faster cloning/fetching. 
+
+To start using Git LFS, you need to download the Git command line extension:
+```
+git lfs install
+```
+In the Git repository you want to use Git LFS in, select the file types you would like Git LFS to manage by running (replace `file type` with a file type):
+```
+git lfs track "*.'file type'"
+git add .gitattributes
+```
+Note that by defining the tracked file types, any pre-existing files will not get added to Git LFS. To convert any prior files, use the [`git lfs migrate`](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.adoc) command.
+
+After set up, you can just commit and push as you normally would and Git LFS will work.
 
 # Mask R-CNN Model
 A CNN is a type of artificial neural network that is used in image recognition and processing optimized for pixel data. The CNN Architecture consists of three main layers:
@@ -252,3 +301,4 @@ The backbone for a Mask R-CNN model is usually a pre-trained CNN. The backbone e
 - [Okery PyTorch Simple Mask RCNN GitHub](https://github.com/Okery/PyTorch-Simple-MaskRCNN)
 - [multimodallearning Mask RCNN GitHub](https://github.com/multimodallearning/pytorch-mask-rcnn)
 - [Test Image Segmentation Dataset](https://www.kaggle.com/datasets/vencerlanz09/plastic-and-paper-cups-synthetic-image-dataset)
+- [Fine-tune PyTorch Pre-trained Mask-RCNN](https://haochen23.github.io/2020/06/fine-tune-mask-rcnn-pytorch.html)

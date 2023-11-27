@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
-
-.hero {
+  }
+  
+  .hero {
     width: 100%;
     height: 100vh;
     background-image: url("images/background.png");
@@ -12,23 +12,70 @@
     background-position: center;
     position: relative;
     overflow: hidden;
-}
+  } 
+  
+  .animate{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
 
-.logo{
-    width: 100px;
+
+  /* .animate.logo {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(0);
+    transition: all 200ms;
+  } */
+
+  .animate#title{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-15%);
+    transition: all 0.6s;
+  }
+
+  .show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  .show#title{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(#00545d, #000729);
+    color: white;
+    margin: 0;
+    padding: 8em;
+    box-sizing: border-box;
+  }
+  
+  .logo{
+    width: 150px;
     cursor: pointer;
-}
-
-.navbar{
+  }
+  
+  .navbar{
     width: 85%;
     height: 15%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-button {
+  }
+  
+  button {
     color: #fbfcfd;
     padding: 10px 25px;
     background: transparent;
@@ -36,9 +83,9 @@ button {
     border-radius: 20px;
     outline: none;
     cursor: pointer;
-}
-
-.follow {
+  }
+  
+  .follow {
     color: #fbfcfd;
     padding: 10px 25px;
     background: transparent;
@@ -46,16 +93,16 @@ button {
     border-radius: 20px;
     outline: none;
     cursor: pointer;
-}
-
-.follow:hover {
+  }
+  
+  .follow:hover {
     background-color: white;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .follow:hover .hidden-link {
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
 }
-
 
 .content {
     color: #fbfcfd;
@@ -64,24 +111,24 @@ button {
     left: 8%;
     transform: translateY(-50%);
     z-index: 2;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 80px;
     margin: 10px 0 30px;
     line-height: 80px;
-}
-
-.side-bar{
+  }
+  
+  .side-bar{
     width: 50px;
     height: 100vh;
     background: linear-gradient(#00545d, #000729);
     position: absolute;
     right: 0;
     top: 0;
-}
-
-.menu {
+  }
+  
+  .menu {
     display: block;
     width: 25px;
     margin: 40px auto 0;
@@ -92,9 +139,9 @@ h1 {
     width: 25px;
     margin: 5px auto;
     cursor: pointer;
-}
-
-.social-links {
+  }
+  
+  .social-links {
     width: 50px;
     text-align: center;
     position: absolute;
@@ -102,28 +149,34 @@ h1 {
     transform: translateY(-50%);
 }
 
+.useful-links img {
+    width: 25px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
 .useful-links {
     width: 50px;
     text-align: center;
     position: absolute;
     bottom: 30px;
-}
-
-.bubbles img{
+  }
+  
+  .bubbles img{
     width: 50px;
     animation: bubble 7s linear infinite;
-}
-
-.bubbles {
+  }
+  
+  .bubbles {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     position: absolute;
     bottom: -70px;
-}
-
-@keyframes bubble {
+  }
+  
+  @keyframes bubble {
     0%{
         transform: translateY(0);
     }
@@ -137,37 +190,38 @@ h1 {
         transform: translateY(-80vh);
         opacity: 0;
     }
-}
-
-.bubbles img:nth-child(1){
+  }
+  
+  .bubbles img:nth-child(1){
     width: 25px;
     animation-delay: 2s;
-}
-.bubbles img:nth-child(2){
+  }
+  .bubbles img:nth-child(2){
     animation-delay: 3s;
-}
-.bubbles img:nth-child(3){
+  }
+  .bubbles img:nth-child(3){
     width: 40px;
     animation-delay: 5s;
-}
-.bubbles img:nth-child(4){
+  }
+  .bubbles img:nth-child(4){
     width: 15px;
     animation-delay: 6s;
-}
-.bubbles img:nth-child(5){
+  }
+  .bubbles img:nth-child(5){
     width: 30px;
     animation-delay: 8s;
-}
-.bubbles img:nth-child(6){
+  }
+  .bubbles img:nth-child(6){
     animation-delay: 9s;
-}
-.bubbles img:nth-child(7){
+  }
+  .bubbles img:nth-child(7){
     width: 20px;
     animation-delay: 11s;
-}
-
-.hidden-link {
+  }
+  
+  .hidden-link {
     text-decoration: none;
     outline: none; /* Optionally, prevents clicks on the hidden link */
     color: white;
-}
+  }
+  
