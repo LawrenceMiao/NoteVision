@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class ="navbar">
         <ul class="navbar-nav">
             <!-- <img src="images/menu.png"> -->
@@ -48,38 +47,40 @@
         </ul>
 
     </nav>
-
-    <div class="hero">
-        <div class="heading">
-            <img src="images/logo.png" class="logo">
-            <button type="button" class="follow">
-                <a href="account/signin.html" class="hidden-link">Sign In</a>
-            </button>
+    <div id="my-scrollbar">
+        <div class="hero">
+            <div class="heading">
+                <img src="images/logo.png" class="logo">
+                <button type="button" class="follow">
+                    <a href="account/signin.html" class="hidden-link">Sign In</a>
+                </button>
+            </div>
+            <div class="content">
+                <small>Convert sheet music to</small>
+                <h1 class="animate" id="title">MIDI files</h1>
+                <button type="button" class="follow">
+                    <a href="music/submit.html" class="hidden-link">Upload file</a>
+                </button>
+            </div>
+            <div class="bubbles">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+                <img src="images/notevision.png">
+            </div>
         </div>
-        <div class="content">
-            <small>Convert sheet music to</small>
-            <h1 class="animate" id="title">MIDI files</h1>
-            <button type="button" class="follow">
-                <a href="music/submit.html" class="hidden-link">Upload file</a>
-            </button>
-        </div>
-        <div class="bubbles">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-            <img src="images/notevision.png">
-        </div>
+        <section>
+            <h1 class="animate" > What is NoteVision?</h1>
+            <p class="animate"> Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Ipsam esse deserunt ex nulla tenetur nam d
+                istinctio dicta odit, amet eos similique provident reiciendis. 
+                Illum quod cupiditate culpa magnam? Perspiciatis, voluptate.</p>
+        </section>
     </div>
-    <section>
-        <h1 class="animate" > What is NoteVision?</h1>
-        <p class="animate"> Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Ipsam esse deserunt ex nulla tenetur nam d
-            istinctio dicta odit, amet eos similique provident reiciendis. 
-            Illum quod cupiditate culpa magnam? Perspiciatis, voluptate.</p>
-    </section>
+    
 
         <!-- <img src="images/menu.png" class="menu">
 
@@ -95,6 +96,7 @@
         </div> -->
 
     </div>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="dist/bundle.js"></script>
 </body>
 </html>

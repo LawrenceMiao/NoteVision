@@ -129,7 +129,7 @@
 .content {
     color: #fbfcfd;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 8%;
     transform: translateY(-50%);
     z-index: 2;
@@ -142,6 +142,7 @@
   }
   
   .navbar {
+    z-index: 1000;
     width: 50px;
     height: 100vh;
     background: linear-gradient(#00545d, #000729);
@@ -253,7 +254,7 @@
     align-items: center;
     justify-content: space-around;
     position: absolute;
-    bottom: -70px;
+    bottom: 800px;
   }
   
   @keyframes bubble {
