@@ -10,7 +10,7 @@ There are two installation options: Anaconda and Miniconda. It is highly recomme
 Follow the instructions to install Anaconda or Miniconda on:
 - [Windows](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)
 - [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html)
-- [Linux]() *issue - linux installation instructions*
+- [Linux](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
 ### Anaconda Environment Setup (Pytorch)
 Follow the instructions below to setup PyTorch in a conda environment: 
