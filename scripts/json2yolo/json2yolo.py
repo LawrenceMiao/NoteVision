@@ -20,7 +20,7 @@ def convert(file, zip=True):
 
     for img in tqdm(data, desc=f'Converting {file}'):
         im_path = img['Labeled Data']
-        im = Image.open(request.get(im_path, stream=True).raw if im_path.startswith('http') else im_path)  # open
+        im = Image.open(requests.get(im_path, stream=True).raw if im_path.startswith('http') else im_path)  # open
         width, height = im.size  # image size
         label_path = save_dir / 'labels' / Path(img['External ID']).with_suffix('.txt').name
         image_path = save_dir / 'images' / img['External ID']
