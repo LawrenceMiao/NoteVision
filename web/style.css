@@ -47,8 +47,13 @@
     }
   }
 
-  .logo {
+  #logo {
     animation: fadeIn 400ms ease-out;
+    transition: all 400ms;
+  }
+
+  #logo:hover{
+    width: 15%;
   }
 
   .animate#title{
@@ -83,7 +88,7 @@
     box-sizing: border-box;
   }
   
-  .logo{
+  #logo{
     width: 150px;
     cursor: pointer;
   }
