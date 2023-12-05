@@ -7,6 +7,8 @@ import yaml
 from PIL import Image
 from tqdm import tqdm
 
+from utils import make_dirs
+
 
 def convert(file, zip=True):
     # Convert Labelbox JSON labels to YOLO labels
