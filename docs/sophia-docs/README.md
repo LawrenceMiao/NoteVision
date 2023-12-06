@@ -51,62 +51,37 @@ Copy and run the generated command after making the selections in your terminal 
 
 ## Neural Networks and Deep Learning
 
-### Chapter 1 - But what is a neural network?
+### Neural Networks
+The main objective of neural networks is to create a system that is capable of learning and recognizing handwritten digits. This begins with a multilayer perceptron, the simplest variant of a neural network. This network represents an input image with a large group of neurons where each neuron corresponds to a pixel in the image. Each neuron encapsulates a grayscale value, ranging from 0 (representing black pixels) to 1 (representing white pixels). Neurons activate based on their grayscale values and how much a system believes the given image corresponds to a specific digit. The activation in one layer influences the activation in the subsequent layer, ending in the brightest neuron of the output layer representing the network's chosen digit. 
 
-- The task is to put together a neural network that can learn to recognize handwritten digits
-- Multilayer perceptron is the simplest variant of a neural network, yet it can still recognize handwritten digits.
-- Network starts with neurons corresponding to pixels of an input image
-- Each neuron holds a number holding a grayscale value; ranging from 0 for black pixels to 1 for white pixels and is lit up when the activation is a high number
-- The activation in the neuron represents how much the system thinks the given image corresponds to a given digit
-- The activation in one layer determines the activation in the next layer
-- The brightest neuron of the output layer is the network's choice for what digit the image represents
-- The goal is to have some mechanism that could combine pixels into edges into patterns into digits
-- There is a weight assigned to each connection from one neuron to another
-- The weighted sum of the pixel values would give us the region of pixels that we care about 
-- Negative weights would help indicate where the edges are since they would be darker
-- The Sigmoid function helps condense the weighted sums into the range between 0 and 1
-- Negative inputs end up close to zero while positive inputs end up close to 1
-- The activation of a neuron is a measure of how positive the weighted sum is
-- We add a bias to the calculation of the weighted sum to tell how high the weighted sum needs to be to be meaningfully active
-- Each connection between neurons has its own weight and bias associated with it
-- The connections can be represented in a notationally compacted way through the matrix vector product with:
-    - The activations from one layer are put in a column as a vector
-- The connections can be represented in a notationally compact way through the matrix vector product with:
-    - The activations from one layer are put in a column as a vector
-- The connections can be represented in a notationally compact way through the matrix vector product with:
-    - The activations from one layer are put in a column as a vector
-- The connections can be represented in a notationally compact way through the matrix vector product with:
-    - The activations from one layer put in a column as a vector
-    - The weights as a matrix where each row of the matrix shows the connections between one layer and a neuron in the next layer
-    - The biases as a vector
-    - Adding the bias vector to the previous matrix vector product
-    - Apply Sigmoid
-- An entire network is basically a function with tons of parameters in the forms of weights and biases that pick up on certain patterns and involve matrix vector products and the sigmoid function
+To detect patterns, the network assigns weights to connections between neurons. These weights are crucial in distinguishing the relevant pixels. Negative weights are beneficial for representing the presence of edges as they correspond to darker areas in the image. The Sigmoid function is used to transform the weighted sum of the pixel values into a manageable range. The function condenses the sums into the range between 0 and 1, with negative inputs tending toward 0 and positive inputs towards 1.
 
-### Chapter 2 - Gradient descent, how neural networks learn
+In addition to weights, biases play a key role in the calculation of the weighted sums. Biases determine when a neuron becomes active. Each neuron connection includes its weight and bias, contributing to the behavior of the network. 
 
-- An example of how a layered structure of a network learns goes like this:
-    - The first layer takes in images of handwritten numbers that are to be deciphered
-    - The second layer picks up on the edges 
-    - The third layer picks up on patterns like loops and lines 
-    - The last layer pieces pieces together the patterns to recognize digits
-- A large amount of training data is provided to a network to train it to see how well it can classify images
-- A cost function takes in the weights and the biases and outputs a single number (the cost) through many training examples which measures how lousy a network is
-- The algorithm for computing the gradients efficiently is called backpropagation.
-- 
+To efficiently represent connections within the network, matrix vector products are used: 
 
-### Chapter 3 - What is backpropagation really doing?
+- Activations from one layer are organized as a column vector
+- Weights are arranged as a matrix, with each row signifying connections between one layer and a subsequent layer's neuron
+- Biases are represented as a vector
 
-- 
+Matrix vector multiplication with the addition of the bias vector provides the input for the Sigmoid function. 
 
-## Python
+In essence, a neural network is a complex mathematical function, full of parameters in the form of weights and biases. These parameters play a vital role in recognizing patterns within the input data. As the network processes information through matrix vector products and applies the Sigmoid function, it becomes an adaptable tool to be used for numerous tasks.
 
-### Classes
+### Gradient Descent
 
-### Files
+The layered structure of a neural network as as follows:
 
-## NumPy
-I learned the basics of NumPy in order to work with arrays to create and plot data sets.
+- **First Layer**: This initial layer takes in images of handwritten numbers, the raw input the network aims to interpret.
+- **Second Layer**: Building on the input, the second layer detects edges within the images.
+- **Third Layer**: The third layer identifies more complex patterns, such as loops and lines.
+- **Last Layer**: Finally, the last layer pieces the patterns together to recognize complete digits.
+
+In order to teach a neural network to classify images, a significant amount of training data is provided. This data is to be used by the network to learn and improve its ability to accurately identify images. 
+
+An important part of the process is the use of a cost function. The function takes into account the weights and biases within the network and produces a single output, the cost. The cost helps to measure the network's effectiveness and how well it works through numerous training examples.
+
+<!-- - The algorithm for computing the gradients efficiently is called backpropagation. -->
 
 ## Pillow
 The Python Imaging Library is a free and open-source library for the Python and C language that helps with opening, manipulating, processing, and saving different image file formats. Some image manipulation techniques the library offers include adding filters, blurring objects and people, and rotating images. The Pillow library can help manipulate multiple images from a folder at once instead of doing it individually as well, which makes it really useful. The library is available to install for Windows, MAC OS X, and Linux.
