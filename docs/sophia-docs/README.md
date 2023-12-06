@@ -54,19 +54,19 @@ Copy and run the generated command after making the selections in your terminal 
 ### Neural Networks
 The main objective of neural networks is to create a system that is capable of learning and recognizing handwritten digits. This begins with a multilayer perceptron, the simplest variant of a neural network. This network represents an input image with a large group of neurons where each neuron corresponds to a pixel in the image. Each neuron encapsulates a grayscale value, ranging from 0 (representing black pixels) to 1 (representing white pixels). Neurons activate based on their grayscale values and how much a system believes the given image corresponds to a specific digit. The activation in one layer influences the activation in the subsequent layer, ending in the brightest neuron of the output layer representing the network's chosen digit. 
 
-To detect patterns, the network assigns weights to connections between neurons. These weights are crucial in distinguishing the relevant pixels. Negative weights are beneficial for representing the presence of edges as they correspond to darker areas in the image. The Sigmoid function is used to transform the weighted sum of the pixel values into a manageable range. The function condenses the sums into the range between 0 and 1, with negative inputs tending torwards 0 and positive inputs towards 1.
+To detect patterns, the network assigns weights to connections between neurons. These weights are crucial in distinguishing the relevant pixels. Negative weights are beneficial for representing the presence of edges as they correspond to darker areas in the image. The Sigmoid function is used to transform the weighted sum of the pixel values into a manageable range. The function condenses the sums into the range between 0 and 1, with negative inputs tending toward 0 and positive inputs towards 1.
 
 In addition to weights, biases play a key role in the calculation of the weighted sums. Biases determine when a neuron becomes active. Each neuron connection includes its weight and bias, contributing to the behavior of the network. 
 
 To efficiently represent connections within the network, matrix vector products are used: 
 
-- Activations from one layer are orgnaized as a column vector
-- Weights are arranged as a matrix, with each row signifying connections between one layer an a subsequent layer's neuron
+- Activations from one layer are organized as a column vector
+- Weights are arranged as a matrix, with each row signifying connections between one layer and a subsequent layer's neuron
 - Biases are represented as a vector
 
 Matrix vector multiplication with the addition of the bias vector provides the input for the Sigmoid function. 
 
-In essence, a neural network is a complex mathematicla function, full of parameters in the form of weights and biases. These parameters play a vital role in recognizing patterns within the input data. As the network processes information through matrix vector products and applies the Sigmoid function, it becomes an adaptable tool to be used for numerous tasks.
+In essence, a neural network is a complex mathematical function, full of parameters in the form of weights and biases. These parameters play a vital role in recognizing patterns within the input data. As the network processes information through matrix vector products and applies the Sigmoid function, it becomes an adaptable tool to be used for numerous tasks.
 
 ### Gradient Descent
 
