@@ -51,6 +51,7 @@ Copy and run the generated command after making the selections in your terminal 
 
 ## Neural Networks and Deep Learning
 
+### Neural Networks
 The main objective of neural networks is to create a system that is capable of learning and recognizing handwritten digits. This begins with a multilayer perceptron, the simplest variant of a neural network. This network represents an input image with a large group of neurons where each neuron corresponds to a pixel in the image. Each neuron encapsulates a grayscale value, ranging from 0 (representing black pixels) to 1 (representing white pixels). Neurons activate based on their grayscale values and how much a system believes the given image corresponds to a specific digit. The activation in one layer influences the activation in the subsequent layer, ending in the brightest neuron of the output layer representing the network's chosen digit. 
 
 To detect patterns, the network assigns weights to connections between neurons. These weights are crucial in distinguishing the relevant pixels. Negative weights are beneficial for representing the presence of edges as they correspond to darker areas in the image. The Sigmoid function is used to transform the weighted sum of the pixel values into a manageable range. The function condenses the sums into the range between 0 and 1, with negative inputs tending torwards 0 and positive inputs towards 1.
@@ -67,17 +68,20 @@ Matrix vector multiplication with the addition of the bias vector provides the i
 
 In essence, a neural network is a complex mathematicla function, full of parameters in the form of weights and biases. These parameters play a vital role in recognizing patterns within the input data. As the network processes information through matrix vector products and applies the Sigmoid function, it becomes an adaptable tool to be used for numerous tasks.
 
-### Chapter 2 - Gradient descent, how neural networks learn
+### Gradient Descent
 
-- An example of how a layered structure of a network learns goes like this:
-    - The first layer takes in images of handwritten numbers that are to be deciphered
-    - The second layer picks up on the edges 
-    - The third layer picks up on patterns like loops and lines 
-    - The last layer pieces pieces together the patterns to recognize digits
-- A large amount of training data is provided to a network to train it to see how well it can classify images
-- A cost function takes in the weights and the biases and outputs a single number (the cost) through many training examples which measures how lousy a network is
-- The algorithm for computing the gradients efficiently is called backpropagation.
-- 
+The layered structure of a neural network as as follows:
+
+- **First Layer**: This initial layer takes in images of handwritten numbers, the raw input the network aims to interpret.
+- **Second Layer**: Building on the input, the second layer detects edges within the images.
+- **Third Layer**: The third layer identifies more complex patterns, such as loops and lines.
+- **Last Layer**: Finally, the last layer pieces the patterns together to recognize complete digits.
+
+In order to teach a neural network to classify images, a significant amount of training data is provided. This data is to be used by the network to learn and improve its ability to accurately identify images. 
+
+An important part of the process is the use of a cost function. The function takes into account the weights and biases within the network and produces a single output, the cost. The cost helps to measure the network's effectiveness and how well it works through numerous training examples.
+
+<!-- - The algorithm for computing the gradients efficiently is called backpropagation. -->
 
 ## Pillow
 The Python Imaging Library is a free and open-source library for the Python and C language that helps with opening, manipulating, processing, and saving different image file formats. Some image manipulation techniques the library offers include adding filters, blurring objects and people, and rotating images. The Pillow library can help manipulate multiple images from a folder at once instead of doing it individually as well, which makes it really useful. The library is available to install for Windows, MAC OS X, and Linux.
