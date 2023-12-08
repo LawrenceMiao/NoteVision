@@ -39,8 +39,8 @@ def convert(file, zip=True):
             line = names.index(cls), *xywh  # YOLO format (class_index, xywh)
             with open(label_path, 'a') as f:
                 f.write(('%g ' * len(line)).rstrip() % line + '\n')
-
-    # Save dataset.yaml
+            
+# Save dataset.yaml
     d = {'path': f"../datasets/{file.stem}  # dataset root dir",
          'train': "images/train  # train images (relative to path) 128 images",
          'val': "images/val  # val images (relative to path) 128 images",
