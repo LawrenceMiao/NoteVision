@@ -98,3 +98,28 @@ def image_folder2file(folder='images/'):  # from utils import *; image_folder2fi
     with open(f'{folder[:-1]}.txt', 'w') as file:
         for l in s:
             file.write(l + '\n')  # write image list
+
+
+def add_coco_background(path='../data/sm4/', n=1000):  # from utils import *; add_coco_background()
+    # add coco background to sm4 in outb.txt
+    p = f'{path}background'
+    if os.path.exists(p):
+        shutil.rmtree(p)  # delete output folder
+    os.makedirs(p)  # make new output folder
+
+    # copy images
+    for image in glob.glob('../coco/images/train2014/*.*')[:n]:
+        os.system(f'cp {image} {p}')
+
+    # add to outb.txt and make train, test.txt files
+    f = f'{path}out.txt'
+    fb = f'{path}outb.txt'
+    os.system(f'cp {f} {fb}')
+    with open(fb, 'a') as file:
+        file.writelines(i + '\n' for i in glob.glob(f'{p}/*.*'))
+    split_rows_simple(file=fb)
+
+
+def create_single_class_dataset(path='../data/sm3'):  # from utils import *; create_single_class_dataset('../data/sm3/')
+    # creates a single-class version of an existing dataset
+    os.system(f'mkdir {path}_1cls')
