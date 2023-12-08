@@ -100,6 +100,51 @@ Began watching and learning more about PyTorch through the *Deep Learning with P
 
 ## NumPy Basics
 
-Learned the basics of NumPy through the help of *W3Schools*.
+### Installation
 
-[Basics of NumPy](https://www.w3schools.com/python/numpy/default.asp)
+NumPy is usually installed alongside other scientific computing libraries like SciPy, Matplotlib, etc. If you don't have it installed, you can install it using `pip`:
+
+```bash
+pip install numpy
+```
+
+
+### Importing NumPy
+To use NumPy, you'll need to import it into your Python environment:
+
+```python
+import numpy as np
+```
+
+
+### NumPy Arrays
+The core component of NumPy is the `ndarray` (N-dimensional array). It's similar to Python lists, but with added functionalities optimized for numerical operations.
+
+Creating Arrays
+You can create NumPy arrays in various ways:
+
+
+* **From a Python List:**
+```python
+my_list = [1, 2, 3, 4, 5]
+arr = np.array(my_list)
+```
+
+
+* **Using `arange`:**
+```python
+arr = np.arange(0, 10, 2)  # Creates an array from 0 to 10 (exclusive) with step 2
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
