@@ -77,3 +77,24 @@ def make_dirs(dir='new_dir/'):
     for p in dir, dir / 'labels', dir / 'images':
         p.mkdir(parents=True, exist_ok=True)  # make dir
     return dir
+
+
+def write_data_data(fname='data.data', nc=80):
+    # write darknet *.data file
+    lines = ['classes = %g\n' % nc,
+             'train =../out/data_train.txt\n',
+             'valid =../out/data_test.txt\n',
+             'names =../out/data.names\n',
+             'backup = backup/\n',
+             'eval = coco\n']
+
+    with open(fname, 'a') as f:
+        f.writelines(lines)
+
+
+def image_folder2file(folder='images/'):  # from utils import *; image_folder2file()
+    # write a txt file listing all imaged in folder
+    s = glob.glob(f'{folder}*.*')
+    with open(f'{folder[:-1]}.txt', 'w') as file:
+        for l in s:
+            file.write(l + '\n')  # write image list
