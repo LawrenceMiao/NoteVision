@@ -136,9 +136,37 @@ arr = np.array(my_list)
 arr = np.arange(0, 10, 2)  # Creates an array from 0 to 10 (exclusive) with step 2
 ```
 
+* **With Zeros, Ones, or Empty**
+```python
+zeros_arr = np.zeros((3, 4))  # Creates a 3x4 array filled with zeros
+ones_arr = np.ones((2, 3))    # Creates a 2x3 array filled with ones
+empty_arr = np.empty((2, 2))  # Creates a 2x2 empty array (values might be arbitrary)
+```
 
+### Array Attributes
+NumPy arrays have several attributes that provide information about the array:
 
+* `shape`: Describes the dimensions of the array.
+* `dtype`: Specifies the data type of the array elements.
+* `ndim`: Indicates the number of dimensions.
+* `size`: Represents the total number of elements in the array.
 
+### Array Operations
+NumPy allows for efficient mathematical operations on arrays.
+
+* **Element-Wise Operations:**
+```python
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Addition
+result_add = arr1 + arr2
+
+# Multiplication
+result_mul = arr1 * arr2
+
+# Other operations: subtraction, division, power, etc.
+```
 
 
 
