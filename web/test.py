@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 from torch import nn
+import torch
 
 
 
@@ -58,7 +59,42 @@ class TestModelV0(nn.Module):
 
   def forward(self, x):
     return self.classifier(self.conv_block_2(self.conv_block_1(x)))
-  
+
+
+# Load in all the classes and its respective dictionary
+allClasses = []
+classDict = {}
+model_0 = QuickDrawModelV0(input_shape=1, hidden_units=10, output_shape=len(allClasses))
+model_0.load_state_dict(torch.load('model.pth'))
+model_0.eval()
+
+
+# Transform the image
+data_transform = transforms.Compose([
+    transforms.Resize(size=(64, 64)),
+    transforms.Grayscale(1),
+    transforms.ToTensor()
+])
+
+# Function to make prediction
+def make_predictions(model: torch.nn.Module, data, device: torch.device = "cpu"):
+    pred_probs = []
+    model.eval()
+    with torch.inference_mode():
+        # Prepare sample
+        sample = torch.unsqueeze(data, dim=0).to("cpu") # Add an extra dimension and send sample to device
+
+        # Forward pass (model outputs raw logit)
+        pred_logit = model(sample)
+
+        # Get prediction probability (logit -> prediction probability)
+        pred_prob = torch.softmax(pred_logit.squeeze(), dim=0)
+
+        # Get pred_prob off GPU for further calculations
+        pred_probs.append(pred_prob.cpu())
+
+    # Stack the pred_probs to turn list into a tensor
+    return torch.stack(pred_probs)
   
 
 @app.route('/')
