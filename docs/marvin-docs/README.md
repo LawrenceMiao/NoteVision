@@ -168,6 +168,36 @@ result_mul = arr1 * arr2
 # Other operations: subtraction, division, power, etc.
 ```
 
+* **Array Indexing and Slicing:**
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Indexing
+print(arr[0, 1])  # Accesses element at row 0, column 1
+
+# Slicing
+print(arr[1:])    # Retrieves rows starting from index 1 till the end
+print(arr[:, 1])  # Retrieves all elements from column 1
+```
+
+
+
+### Array Functions
+NumPy provides various mathematical functions to operate on arrays efficiently.
+
+* **Mathematical Functions:**
+```python
+arr = np.array([1, 2, 3, 4, 5])
+
+# Sum, mean, standard deviation
+print(np.sum(arr))
+print(np.mean(arr))
+print(np.std(arr))
+
+# Trigonometric functions, exponential, logarithm, etc.
+```
+
+
 
 
 
