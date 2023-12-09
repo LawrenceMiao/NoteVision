@@ -96,6 +96,30 @@ Began watching and learning more about PyTorch through the *Deep Learning with P
 
 [PyTorch Playlist](https://www.youtube.com/playlist?list=PLyMom0n-MBroupZiLfVSZqK5asX8KfoHL)
 
+### Installation
+
+You can install PyTorch via `pip` according to your system configurations. 
+
+For CPU-only:
+```bash
+pip install torch torchvision
+```
+
+For GPU support (CUDA enabled):
+```bash
+pip install torch torchvision torchaudio
+```
+
+
+### Getting Started
+Importing PyTorch
+
+```python
+import torch
+import torch.nn as nn
+```
+
+
 
 
 ## NumPy Basics
