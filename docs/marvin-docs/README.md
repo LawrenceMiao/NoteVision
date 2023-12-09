@@ -155,6 +155,46 @@ result_matmul = torch.matmul(matrix1, matrix2)
 ```
 
 
+### Autograd and Neural Networks
+PyTorch provides a powerful automatic differentiation mechanism through its `autograd` package, which makes training neural networks easier.
+
+
+Creating a Simple Neural Network
+```python
+# Define a simple neural network
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(10, 5)  # Input size: 10, Output size: 5
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(5, 1)   # Input size: 5, Output size: 1
+    
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
+
+# Instantiate the neural network
+model = SimpleNN()
+
+# Define loss function and optimizer
+criterion = nn.MSELoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+```
+
+
+
+### Training a Neural Network
+```python
+# Example training loop (pseudo-code)
+for epoch in range(num_epochs):
+    optimizer.zero_grad()  # Zero the gradients
+    output = model(input_data)  # Forward pass
+    loss = criterion(output, target)  # Calculate loss
+    loss.backward()  # Backpropagation
+    optimizer.step()  # Update weights
+```
 
 
 
