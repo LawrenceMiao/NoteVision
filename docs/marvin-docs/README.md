@@ -96,10 +96,213 @@ Began watching and learning more about PyTorch through the *Deep Learning with P
 
 [PyTorch Playlist](https://www.youtube.com/playlist?list=PLyMom0n-MBroupZiLfVSZqK5asX8KfoHL)
 
+### Installation
+
+You can install PyTorch via `pip` according to your system configurations. 
+
+For CPU-only:
+```bash
+pip install torch torchvision
+```
+
+For GPU support (CUDA enabled):
+```bash
+pip install torch torchvision torchaudio
+```
+
+
+### Getting Started
+Importing PyTorch
+
+```python
+import torch
+import torch.nn as nn
+```
+
+
+### Tensors
+The core data structure in PyTorch is a tensor, similar to NumPy's array but with additional GPU acceleration capabilities.
+
+
+Creating tensors:
+```python
+# Create an empty tensor
+empty_tensor = torch.empty(2, 3)  # Creates a 2x3 uninitialized tensor
+
+# Create a tensor from a Python list
+my_list = [1, 2, 3, 4, 5]
+tensor_from_list = torch.tensor(my_list)
+
+# Generate a random tensor
+random_tensor = torch.rand(3, 2)  # Creates a 3x2 tensor with random values between 0 and 1
+```
+
+
+### Tensor Operations
+You can perform various operations on tensors, similar to NumPy arrays.
+```python
+# Tensor addition
+tensor1 = torch.tensor([[1, 2], [3, 4]])
+tensor2 = torch.tensor([[5, 6], [7, 8]])
+result = tensor1 + tensor2
+
+# Matrix multiplication
+matrix1 = torch.randn(3, 4)
+matrix2 = torch.randn(4, 2)
+result_matmul = torch.matmul(matrix1, matrix2)
+
+# Other operations: subtraction, element-wise multiplication, etc.
+```
+
+
+### Autograd and Neural Networks
+PyTorch provides a powerful automatic differentiation mechanism through its `autograd` package, which makes training neural networks easier.
+
+
+Creating a Simple Neural Network
+```python
+# Define a simple neural network
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(10, 5)  # Input size: 10, Output size: 5
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(5, 1)   # Input size: 5, Output size: 1
+    
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
+
+# Instantiate the neural network
+model = SimpleNN()
+
+# Define loss function and optimizer
+criterion = nn.MSELoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+```
+
+
+
+### Training a Neural Network
+```python
+# Example training loop (pseudo-code)
+for epoch in range(num_epochs):
+    optimizer.zero_grad()  # Zero the gradients
+    output = model(input_data)  # Forward pass
+    loss = criterion(output, target)  # Calculate loss
+    loss.backward()  # Backpropagation
+    optimizer.step()  # Update weights
+```
+
 
 
 ## NumPy Basics
 
-Learned the basics of NumPy through the help of *W3Schools*.
+### Installation
 
-[Basics of NumPy](https://www.w3schools.com/python/numpy/default.asp)
+NumPy is usually installed alongside other scientific computing libraries like SciPy, Matplotlib, etc. If you don't have it installed, you can install it using `pip`:
+
+```bash
+pip install numpy
+```
+
+
+### Importing NumPy
+To use NumPy, you'll need to import it into your Python environment:
+
+```python
+import numpy as np
+```
+
+
+### NumPy Arrays
+The core component of NumPy is the `ndarray` (N-dimensional array). It's similar to Python lists, but with added functionalities optimized for numerical operations.
+
+Creating Arrays
+You can create NumPy arrays in various ways:
+
+
+* **From a Python List:**
+```python
+my_list = [1, 2, 3, 4, 5]
+arr = np.array(my_list)
+```
+
+
+* **Using `arange`:**
+```python
+arr = np.arange(0, 10, 2)  # Creates an array from 0 to 10 (exclusive) with step 2
+```
+
+* **With Zeros, Ones, or Empty**
+```python
+zeros_arr = np.zeros((3, 4))  # Creates a 3x4 array filled with zeros
+ones_arr = np.ones((2, 3))    # Creates a 2x3 array filled with ones
+empty_arr = np.empty((2, 2))  # Creates a 2x2 empty array (values might be arbitrary)
+```
+
+### Array Attributes
+NumPy arrays have several attributes that provide information about the array:
+
+* `shape`: Describes the dimensions of the array.
+* `dtype`: Specifies the data type of the array elements.
+* `ndim`: Indicates the number of dimensions.
+* `size`: Represents the total number of elements in the array.
+
+### Array Operations
+NumPy allows for efficient mathematical operations on arrays.
+
+* **Element-Wise Operations:**
+```python
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Addition
+result_add = arr1 + arr2
+
+# Multiplication
+result_mul = arr1 * arr2
+
+# Other operations: subtraction, division, power, etc.
+```
+
+* **Array Indexing and Slicing:**
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Indexing
+print(arr[0, 1])  # Accesses element at row 0, column 1
+
+# Slicing
+print(arr[1:])    # Retrieves rows starting from index 1 till the end
+print(arr[:, 1])  # Retrieves all elements from column 1
+```
+
+
+
+### Array Functions
+NumPy provides various mathematical functions to operate on arrays efficiently.
+
+* **Mathematical Functions:**
+```python
+arr = np.array([1, 2, 3, 4, 5])
+
+# Sum, mean, standard deviation
+print(np.sum(arr))
+print(np.mean(arr))
+print(np.std(arr))
+
+# Trigonometric functions, exponential, logarithm, etc.
+```
+
+
+
+
+
+
+
+
+
+
