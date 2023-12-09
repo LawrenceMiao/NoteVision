@@ -2,32 +2,20 @@
 
 This documentation contains information on all of the technologies used on Note Vision.
 
+
 ## Neural Network
 
-A neural network is a way to empulate how the human brain works to process information. This is most commonly used 
+A neural network is a way to empulate how the human brain works to process information. This is most commonly used as a type of machine learning, called deep learning. It uses interconnected nodes in a layered structure that resembles the human brain. A neural network is used to summarize documents or recognize faces.
 
-
-<!-- 
-This video is the introduction into neural networks. Using the example of an AI learning to read a handwritten letter, the video does a deep dive into how the AI learns to recognize the number. There are layers to the neural network and each layer helps to determine the final number since each layer cooresponds to each component of the number. For example, for number 9, the second layer corresponds to the little edges that create the entire number. Then, those little edges will light up the neurons that corresponds to the loop at the top and the line at the bottom of a 9. Then, this will light up the neuron for the number 9. For each layer of neurons, each neuron in the next layer is connected to all of the neurons from the previous layer. For the connections between the different layers of neurons, there are weights that help detemine whether or not the pixels will generate the number. This is also a bias for each neuron in the second row. -->
+Using the example of an AI learning to read a handwritten number, each layer of the neural network will help determine the final number. Each layer will break down the components of the handwritten number. For example, for number 9, the second layer corresponds to the little edges that create the entire number. Then, those little edges will light up the neurons that corresponds to the loop at the top and the line at the bottom of a 9. Then, this will light up the neuron for the number 9. For each layer of neurons, each neuron in the next layer is connected to all of the neurons from the previous layer. For the connections between the different layers of neurons, there are weights that help detemine whether or not the pixels will generate the number. This is also a bias for each neuron in the second row.
 
 ### Sources
 - [But what is a neural network? | Chapter 1, Deep learning - 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk)
+- [Gradient descent, how neural networks learn | Chapter 2, Deep learning - 3Blue1Brown](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+- [What is backpropagation really doing? | Chapter 3, Deep learning - 3Blue1Brown](https://www.youtube.com/watch?v=Ilg3gGewQ5U) -->
 - [What are neural networks? - IBM](https://www.ibm.com/topics/neural-networks) 
 - [What is a neural network? - AWS](https://aws.amazon.com/what-is/neural-network/)
 
-<!-- ## Video 2 - 
-
-This video discusses the concept of gradient descent. 
-
-### Sources
-- [Gradient descent, how neural networks learn | Chapter 2, Deep learning - 3Blue1Brown](https://www.youtube.com/watch?v=IHZwWFHWa-w)
-
-## Video 3 - 
-
-This video is about 
-
-### Sources
-- [What is backpropagation really doing? | Chapter 3, Deep learning - 3Blue1Brown](https://www.youtube.com/watch?v=Ilg3gGewQ5U) -->
 
 ## Python Class Inheritance
 
@@ -76,6 +64,7 @@ class Melon(Fruit):
 ### Sources
 - [inferitance info](https://www.w3schools.com/python/python_inheritance.asp)
 - [more info](https://www.geeksforgeeks.org/inheritance-in-python/)
+
 
 ## Dunder methods
 
