@@ -120,6 +120,42 @@ import torch.nn as nn
 ```
 
 
+### Tensors
+The core data structure in PyTorch is a tensor, similar to NumPy's array but with additional GPU acceleration capabilities.
+
+
+Creating tensors:
+```python
+# Create an empty tensor
+empty_tensor = torch.empty(2, 3)  # Creates a 2x3 uninitialized tensor
+
+# Create a tensor from a Python list
+my_list = [1, 2, 3, 4, 5]
+tensor_from_list = torch.tensor(my_list)
+
+# Generate a random tensor
+random_tensor = torch.rand(3, 2)  # Creates a 3x2 tensor with random values between 0 and 1
+```
+
+
+### Tensor Operations
+You can perform various operations on tensors, similar to NumPy arrays.
+```python
+# Tensor addition
+tensor1 = torch.tensor([[1, 2], [3, 4]])
+tensor2 = torch.tensor([[5, 6], [7, 8]])
+result = tensor1 + tensor2
+
+# Matrix multiplication
+matrix1 = torch.randn(3, 4)
+matrix2 = torch.randn(4, 2)
+result_matmul = torch.matmul(matrix1, matrix2)
+
+# Other operations: subtraction, element-wise multiplication, etc.
+```
+
+
+
 
 
 ## NumPy Basics
