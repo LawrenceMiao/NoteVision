@@ -5,6 +5,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
+# check
 
 @app.route('/invert_image', methods=['POST'])
 def invert_image():
