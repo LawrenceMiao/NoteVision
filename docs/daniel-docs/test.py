@@ -4,13 +4,6 @@ from PIL import Image, ImageDraw
 mid_file_path = "C:/Users/danie/Documents/courses/S24/rcos/NoteVision/rach.mid"
 mid_file = MidiFile(mid_file_path)
 
-txt_file = open("rach.txt", "w")
-for line in mid_file:
-    txt_file.write(str(line) + "\n")
-txt_file.close()
-
-mid_file = MidiFile(mid_file_path)
-
 max_note = 0
 max_time = 0
 for line in mid_file:
