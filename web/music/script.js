@@ -85,6 +85,29 @@ function uploadFile(file) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const fileInput = document.getElementById('fileInput');
+  const uploadForm = document.getElementById('uploadForm');
+  const postUpload = document.getElementById('postUpload');
+  const invertedImage = document.getElementById('invertedImage');
+
+  fileInput.addEventListener('change', async () => {
+    const formData = new FormData(uploadForm);
+    try {
+      const response = await fetch('/invert_image', {
+        method: 'POST',
+        body: formData,
+      });
+      const imageData = await response.blob();
+      const imageUrl = URL.createObjectURL(imageData);
+      invertedImage.src = imageUrl;
+      postUpload.style.display = 'block';
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  });
+});
+
 
 
 
