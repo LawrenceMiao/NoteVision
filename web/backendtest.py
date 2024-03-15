@@ -2,6 +2,8 @@ import requests
 from flask import Flask, request, jsonify
 import io
 from PIL import Image
+from PIL import ImageOps
+from flask import send_file
 
 app = Flask(__name__)
 
