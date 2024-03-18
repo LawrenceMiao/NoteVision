@@ -24,16 +24,12 @@ def invert_image():
     # Invert the image
     inverted_image = ImageOps.invert(image)
 
-    # Convert the inverted image back to bytes
-    inverted_image_bytes = io.BytesIO()
-    inverted_image.save(inverted_image_bytes, format='JPEG')
-    inverted_image_bytes.seek(0)
+    # Save the inverted image to a temporary file
+    temp_image_path = 'static/inverted_image.jpg'
+    inverted_image.save(temp_image_path, format='JPEG')
 
-    # Send the inverted image back to the client
-    return send_file(inverted_image_bytes, mimetype='image/jpeg')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    # Return the URL of the inverted image
+    return '/' + temp_image_path
 
 
 
