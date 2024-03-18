@@ -23,7 +23,7 @@ def parse_mid(mid_path):
 
 def make_img(mid_path, total_time, max_note):
     width = 800
-    height = 600
+    height = 800
     bar_height = 4
 
     time_scale = width / total_time
@@ -33,22 +33,22 @@ def make_img(mid_path, total_time, max_note):
     draw = ImageDraw.Draw(img)
 
     mid = MidiFile(mid_path)
-    current_time = 0
+    curr_time = 0
     for line in mid:
         if line.type == 'note_on':
             # Calculate coordinates for the note
-            x1 = int((current_time - line.time) * time_scale)
-            x2 = int(current_time * time_scale)
-            y1 = height - int((line.note + 20) * note_scale)
+            x1 = int((curr_time - line.time) * time_scale)
+            x2 = int(curr_time * time_scale)
+            y1 = height - int(line.note * note_scale)
             y2 = y1 + bar_height
 
             draw.rectangle([x1, y1, x2, y2], fill = 'blue')
 
-        current_time += line.time
+        curr_time += line.time
 
     img.show()
 
 if __name__ == '__main__':
     mid_path = 'C:/Users/danie/Documents/courses/S24/rcos/NoteVision/for_elise_by_beethoven.mid'
-    max_note, total_time = parse_mid(mid_path)
+    total_time, max_note = parse_mid(mid_path)
     make_img(mid_path, total_time, max_note)
