@@ -1,11 +1,13 @@
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, redirect, url_for, session
 import io
 from PIL import Image
 from PIL import ImageOps
 from flask import send_file
+import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 # check
 
@@ -28,9 +30,21 @@ def invert_image():
     temp_image_path = 'static/inverted_image.jpg'
     inverted_image.save(temp_image_path, format='JPEG')
 
-    # Return the URL of the inverted image
-    return '/' + temp_image_path
+    # Store the URL of the inverted image in session storage
+    session['inverted_image_url'] = '/' + temp_image_path
 
+    # Redirect to the display page
+    return redirect(url_for('display_image'))
+
+@app.route('/display_image')
+def display_image():
+    # Retrieve the URL of the inverted image from session storage
+    inverted_image_url = session.pop('inverted_image_url', None)
+    if inverted_image_url:
+        return render_template('display_image.html', inverted_image_url=inverted_image_url)
+    else:
+        # Redirect back to the upload page if no image URL is found
+        return redirect(url_for('upload_image'))
 
 
 def main():
