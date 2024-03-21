@@ -212,10 +212,10 @@ def get_percentage(model):
     print("acuracy: ", ratio[0] / ratio[1])
 
 
-model_ft = models.resnet18(pretrained=True)
+model_ft = models.vgg16(pretrained=True)
 num_ftrs = model_ft.fc.in_features
 model_ft.fc = nn.Linear(num_ftrs, len(class_names))
 model_ft.load_state_dict(torch.load("resmodel24.pth"))
 model_ft = model_ft.to(device)
-# good_visualize_model(model_ft, 120)
+good_visualize_model(model_ft, 120)
 get_percentage(model_ft)
