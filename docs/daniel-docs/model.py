@@ -4,7 +4,7 @@ import numpy as np # for transformation
 import torch # PyTorch package
 import torchvision # load datasets
 import torchvision.transforms as transforms # transform data
-import torch.nn as nn # basic building block for neural neteorks
+import torch.nn as nn # basic building block for neural networks
 import torch.nn.functional as F # import convolution functions like Relu
 import torch.optim as optim # optimzer
 
@@ -34,27 +34,29 @@ class Model(nn.Module):
         x = self.fc3(x)
         return x
 
-# Initialize model
-model = Model()
+if __name__ == "__main__":
 
-# Initialize optimizer
-optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+    # Initialize model
+    model = Model()
 
-# Print model's state_dict
-print("Model's state_dict:")
-for param_tensor in model.state_dict():
-    print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+    # Initialize optimizer
+    optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-# Print optimizer's state_dict
-print("Optimizer's state_dict:")
-for var_name in optimizer.state_dict():
-    print(var_name, "\t", optimizer.state_dict()[var_name])
+    # Print model's state_dict
+    print("Model's state_dict:")
+    for param_tensor in model.state_dict():
+        print(param_tensor, "\t", model.state_dict()[param_tensor].size())
 
-# torch.save(model.state_dict(), "model.pt")
+    # Print optimizer's state_dict
+    print("Optimizer's state_dict:")
+    for var_name in optimizer.state_dict():
+        print(var_name, "\t", optimizer.state_dict()[var_name])
 
-loaded_model = Model()
-loaded_model.load_state_dict(torch.load("model.pt"))
-loaded_model.eval()
+    # torch.save(model.state_dict(), "model.pt")
 
-for i in loaded_model.parameters():
-    print(i)
+    loaded_model = Model()
+    loaded_model.load_state_dict(torch.load("model.pt"))
+    loaded_model.eval()
+
+    for i in loaded_model.parameters():
+        print(i)
