@@ -23,7 +23,7 @@ def parse_mid(mid_path):
 
 def make_img(mid_path, total_time, max_note):
     width = 800
-    height = 800
+    height = 600
     bar_height = 4
 
     time_scale = width / total_time
