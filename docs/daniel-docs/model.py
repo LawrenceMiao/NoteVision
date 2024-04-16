@@ -34,27 +34,28 @@ class Model(nn.Module):
         x = self.fc3(x)
         return x
 
-# Initialize model
-model = Model()
+if __name__ == '__main__':
+    # Initialize model
+    model = Model()
 
-# Initialize optimizer
-optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+    # Initialize optimizer
+    optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-# Print model's state_dict
-print("Model's state_dict:")
-for param_tensor in model.state_dict():
-    print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+    # Print model's state_dict
+    print("Model's state_dict:")
+    for param_tensor in model.state_dict():
+        print(param_tensor, "\t", model.state_dict()[param_tensor].size())
 
-# Print optimizer's state_dict
-print("Optimizer's state_dict:")
-for var_name in optimizer.state_dict():
-    print(var_name, "\t", optimizer.state_dict()[var_name])
+    # Print optimizer's state_dict
+    print("Optimizer's state_dict:")
+    for var_name in optimizer.state_dict():
+        print(var_name, "\t", optimizer.state_dict()[var_name])
 
-# torch.save(model.state_dict(), "model.pt")
+    # torch.save(model.state_dict(), "model.pt")
 
-loaded_model = Model()
-loaded_model.load_state_dict(torch.load("model.pt"))
-loaded_model.eval()
+    loaded_model = Model()
+    loaded_model.load_state_dict(torch.load("model.pt"))
+    loaded_model.eval()
 
-for i in loaded_model.parameters():
-    print(i)
+    for i in loaded_model.parameters():
+        print(i)
