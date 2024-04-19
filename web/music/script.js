@@ -55,37 +55,18 @@ function uploadFile(file) {
           // Continue with the rest of your logic
           const postUploadElement = document.querySelector('.post-upload');
           postUploadElement.style.display = 'block';
-
           
-                // Update the HTML with the prediction result
-                document.getElementById("predictionText").textContent = "Prediction: ";
-          
-                // Display the prediction popup
-                var modal = document.getElementById("predictionPopup");
-                var span = document.getElementsByClassName("close")[0];
-                var predictionText = document.getElementById("predictionText");
-          
-                predictionText.textContent = prediction;
-                modal.style.display = "block";
-          
-                // Close the prediction popup when the user clicks the close button
-                span.onclick = function () {
-                  modal.style.display = "none";
-                };
-          
-                // Close the prediction popup when the user clicks outside the modal content
-                window.onclick = function (event) {
-                  if (event.target == modal) {
-                    modal.style.display = "none";
-                  }
-                };
+          // invert the image
+          invertImage(url);
         })
     } else {
       displayPopup('Please Upload Image File.');
     }
 }
 
-
+function invertImage(file) {
+    console.log('aaaaa');
+}
 
 
 
