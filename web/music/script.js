@@ -50,14 +50,11 @@ function uploadFile(file) {
         })
         .then(function (blob) {
           var url = URL.createObjectURL(blob);
-          // Handle the response text if needed
-          console.log(url);
-          // Continue with the rest of your logic
-          const postUploadElement = document.querySelector('.post-upload');
-          postUploadElement.style.display = 'block';
-          
           // invert the image
           invertImage(url);
+          // send it to a new window
+          console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+          window.location.href = 'postupload.html?imageUrl=' + encodeURIComponent(url);
         })
     } else {
       displayPopup('Please Upload Image File.');
