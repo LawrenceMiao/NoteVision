@@ -157,6 +157,7 @@
     right: 0;
     top: 0;
     transition: 200ms ease;
+    color: white;
   }
 
   .navbar:hover {
