@@ -50,64 +50,20 @@ function uploadFile(file) {
         })
         .then(function (blob) {
           var url = URL.createObjectURL(blob);
-          // Handle the response text if needed
-          console.log(url);
-          // Continue with the rest of your logic
-          const postUploadElement = document.querySelector('.post-upload');
-          postUploadElement.style.display = 'block';
-
-          
-                // Update the HTML with the prediction result
-                document.getElementById("predictionText").textContent = "Prediction: ";
-          
-                // Display the prediction popup
-                var modal = document.getElementById("predictionPopup");
-                var span = document.getElementsByClassName("close")[0];
-                var predictionText = document.getElementById("predictionText");
-          
-                predictionText.textContent = prediction;
-                modal.style.display = "block";
-          
-                // Close the prediction popup when the user clicks the close button
-                span.onclick = function () {
-                  modal.style.display = "none";
-                };
-          
-                // Close the prediction popup when the user clicks outside the modal content
-                window.onclick = function (event) {
-                  if (event.target == modal) {
-                    modal.style.display = "none";
-                  }
-                };
+          // invert the image
+          invertImage(url);
+          // send it to a new window
+          console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+          window.location.href = 'postupload.html?imageUrl=' + encodeURIComponent(url);
         })
     } else {
       displayPopup('Please Upload Image File.');
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const fileInput = document.getElementById('fileInput');
-  const uploadForm = document.getElementById('uploadForm');
-  const postUpload = document.getElementById('postUpload');
-  const invertedImage = document.getElementById('invertedImage');
-
-  fileInput.addEventListener('change', async () => {
-    const formData = new FormData(uploadForm);
-    try {
-      const response = await fetch('/invert_image', {
-        method: 'POST',
-        body: formData,
-      });
-      const imageData = await response.blob();
-      const imageUrl = URL.createObjectURL(imageData);
-      invertedImage.src = imageUrl;
-      postUpload.style.display = 'block';
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    }
-  });
-});
-
+function invertImage(file) {
+    console.log('aaaaa');
+}
 
 
 

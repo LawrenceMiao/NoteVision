@@ -284,6 +284,12 @@ section{
   border-radius: 5px;
   position: relative;
 }
+
+.file-upload-btn {
+  position: relative;
+  top: 2vh;
+  left: 32.5vw;
+}
 /* .buttons .clear-canvas{
   color: #6C757D;
   border: 1px solid #6C757D;
@@ -294,6 +300,7 @@ section{
   color: #fff;
   background: #6C757D; 
 } */
+
 .buttons .save-img{
   background: green;
   border: 1px solid black;
