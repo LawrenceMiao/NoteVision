@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
+from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)
@@ -34,7 +35,12 @@ def upload_file():
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
     file.save(file_path)
 
-    return "File uploaded successfully"
+    return secure_filename(file.filename)
+
+# Route to serve uploaded files
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 if __name__ == '__main__':

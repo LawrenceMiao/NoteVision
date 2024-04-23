@@ -7,17 +7,17 @@
   font-family: "Poppins", sans-serif;
 }
 
-body{
+.body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("background.png");
+  background-image: url("images/background.png");
 }
 
 ::selection{
   color: #fff;
-  background: #00545d;
+  background: black;
 }
 
 .container {
@@ -160,7 +160,7 @@ section .details span{
   color: #00545d;
 }
 
-.post-upload{
+/* .post-upload{
   display: none;
   width: 100%;
   background: black;
@@ -170,6 +170,10 @@ section .details span{
   margin-top: 10vh;
   margin-bottom: 5vh;
   height: 75vh;
+} */
+
+.post-upload {
+  display: none;
 }
 
 *, *::after, *::before {
@@ -289,6 +293,7 @@ section{
   position: relative;
   top: 2vh;
   left: 32.5vw;
+  border-radius: 12.5px;
 }
 /* .buttons .clear-canvas{
   color: #6C757D;
