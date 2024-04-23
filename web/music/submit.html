@@ -11,31 +11,31 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="wrapper">
-      <header>Upload Music Sheet</header>
-      <button class="file-upload-btn">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>Browse File to Upload</p>
-      </button>
-      <input class="file-input" type="file" name="file" hidden>
-      <section class="progress-area"></section>
-      <section class="uploaded-area"></section>
+    <div class="container">
+      <div class="wrapper">
+        <header>Upload Music Sheet</header>
+        <button class="file-upload-btn">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p class="a">Browse File to Upload</p>
+        </button>
+        <input class="file-input" type="file" name="file" hidden>
+        <section class="progress-area"></section>
+        <section class="uploaded-area"></section>
 
-      <div class="popup-overlay" id="popupOverlay">
-        <div class="popup">
-          <p id="popupMessage">Error Message</p>
-          <button id="closePopup">Close</button>
+        <div class="popup-overlay" id="popupOverlay">
+          <div class="popup">
+            <p id="popupMessage">Error Message</p>
+            <button id="closePopup">Close</button>
+          </div>
         </div>
+      </div>
+
+      <div class="post-upload" id="postUpload">
+        <h2>Inverted Image:</h2>
+        <img id="invertedImage" src="" alt="Inverted Image">
       </div>
     </div>
 
-    <div class="post-upload" id="postUpload">
-      <h2>Inverted Image:</h2>
-      <img id="invertedImage" src="" alt="Inverted Image">
-    </div>
-  </div>
-    
   </div>
 
   <script src="script.js"></script>

@@ -111,15 +111,28 @@
     outline: none;
     cursor: pointer;
   }
+
+  .converter {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+  .oneAtATime {
+    position: relative;
+    top: 1vh;
+    font-size: 15px;
+    font-style: italic;
+  }
   
   .follow {
     color: #fbfcfd;
     padding: 10px 25px;
     background: transparent;
-    border: 1px solid #fff;
+    border: 2.5px solid #fff;
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .follow:hover {
@@ -127,8 +140,32 @@
     color: rgba(0, 0, 0, 0.7);
 }
 
+
 .follow:hover .hidden-link {
     color: rgba(0, 0, 0, 0.7);
+}
+
+.follow2 {
+  color: #fbfcfd;
+  padding: 10px 25px;
+  background: transparent;
+  border: 2.5px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  bottom: 15vh;
+}
+
+.follow2:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+.follow2:hover .hidden-link {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .content {
@@ -140,7 +177,6 @@
     z-index: 2;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
-    font-weight:200;
   }
   
   h1 {
