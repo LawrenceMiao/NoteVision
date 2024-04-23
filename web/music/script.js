@@ -60,7 +60,7 @@ function uploadFile(file) {
       })
       .then(function (file_path) {
         // make the image B & W
-        invertImage(file_path);
+        // blackAndWhite(file_path);
         // send it to a new window
         window.location.href = 'postupload.html?imageUrl=' + encodeURIComponent(file_path);
       })
@@ -69,10 +69,50 @@ function uploadFile(file) {
   }
 }
 
-function invertImage(file) {
-  myAsyncFunction();
-  console.log('aaaaa');
-}
+// function blackAndWhite(file_path) {
+//   const officialPath = "/uploads/" + file_path;
+
+//   // Create an image element
+//   var img = new Image();
+//   img.crossOrigin = "Anonymous"; // Enable CORS to prevent security issues
+
+//   // When the image is loaded, apply the grayscale filter
+//   img.onload = function() {
+//     // Create a canvas element
+//     var canvas = document.createElement('canvas');
+//     var ctx = canvas.getContext('2d');
+
+//     // Set the canvas dimensions to match the image
+//     canvas.width = img.width;
+//     canvas.height = img.height;
+
+//     // Draw the image onto the canvas
+//     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+//     // Get the image data
+//     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+//     var data = imageData.data;
+
+//     // Loop through each pixel
+//     for (var i = 0; i < data.length; i += 4) {
+//         // Convert the pixel to grayscale
+//         var avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+//         data[i] = avg; // Red
+//         data[i + 1] = avg; // Green
+//         data[i + 2] = avg; // Blue
+//     }
+
+//     // Put the modified image data back onto the canvas
+//     ctx.putImageData(imageData, 0, 0);
+
+//     // Replace the original image with the modified image
+//     img.src = canvas.toDataURL();
+//   };
+
+//   // Set the source of the image to the file path
+//   img.src = officialPath;
+// }
+
 
 
 
