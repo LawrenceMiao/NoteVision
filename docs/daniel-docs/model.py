@@ -11,8 +11,8 @@ import torch.optim as optim # optimzer
 def imshow(img):
     ''' function to show image '''
     img = img / 2 + 0.5 # unnormalize
-    npimg = img.numpy() # convert to numpy objects
-    plt.imshow(np.transpose(npimg, (1, 2, 0)))
+    npImg = img.numpy() # convert to numpy objects
+    plt.imshow(np.transpose(npImg, (1, 2, 0)))
     plt.show()
 
 class Model(nn.Module):
@@ -43,19 +43,19 @@ if __name__ == '__main__':
 
     # Print model's state_dict
     print("Model's state_dict:")
-    for param_tensor in model.state_dict():
-        print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+    for paramTensor in model.state_dict():
+        print(paramTensor, "\t", model.state_dict()[paramTensor].size())
 
     # Print optimizer's state_dict
     print("Optimizer's state_dict:")
-    for var_name in optimizer.state_dict():
-        print(var_name, "\t", optimizer.state_dict()[var_name])
+    for varName in optimizer.state_dict():
+        print(varName, "\t", optimizer.state_dict()[varName])
 
     # torch.save(model.state_dict(), "model.pt")
 
-    loaded_model = Model()
-    loaded_model.load_state_dict(torch.load("model.pt"))
-    loaded_model.eval()
+    loadedModel = Model()
+    loadedModel.load_state_dict(torch.load("model.pt"))
+    loadedModel.eval()
 
-    for i in loaded_model.parameters():
+    for i in loadedModel.parameters():
         print(i)

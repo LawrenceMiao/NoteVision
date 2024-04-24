@@ -1,26 +1,26 @@
 import cv2
 
-def imgMatch(template_path, image_path):
+def imgMatch(templatePath, imagePath):
     # Read template and target image
-    template = cv2.imread(template_path)
-    target = cv2.imread(image_path)
+    template = cv2.imread(templatePath)
+    target = cv2.imread(imagePath)
 
     # Convert images to grayscale
-    template_gray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
-    target_gray = cv2.cvtColor(target, cv2.COLOR_BGR2GRAY)
+    templateGray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
+    targetGray = cv2.cvtColor(target, cv2.COLOR_BGR2GRAY)
 
     # Perform template matching
-    result = cv2.matchTemplate(target_gray, template_gray, cv2.TM_CCOEFF_NORMED)
+    result = cv2.matchTemplate(targetGray, templateGray, cv2.TM_CCOEFF_NORMED)
 
-    # Get the location of the best match
-    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
-    match_loc = max_loc
+    # Get the location of the best match (minVal, maxVal, and minLoc are filler values)
+    minVal, maxVal, minLoc, maxLoc = cv2.minMaxLoc(result)
+    matchLoc = maxLoc
 
     # Draw a rectangle around the matched region
-    height, width = template_gray.shape
-    top_left = match_loc
-    bottom_right = (top_left[0] + width, top_left[1] + height)
-    cv2.rectangle(target, top_left, bottom_right, (0, 255, 0), 2)
+    height, width = templateGray.shape
+    topLeft = matchLoc
+    bottomRight = (topLeft[0] + width, topLeft[1] + height)
+    cv2.rectangle(target, topLeft, bottomRight, (0, 255, 0), 2)
 
     # Display the result
     cv2.imshow('Matched Image', target)
