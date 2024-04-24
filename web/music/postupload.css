@@ -7,3 +7,266 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background: linear-gradient(#000000, #160116);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; /* Slide logo to the left */
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  
+  .navbar a:hover {
+    background-color: #777;
+  }
+  
+  .sidebar {
+    background-color: rgb(0, 0, 0, 0.95) /*#555*/;
+    color: #fff;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 99;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar nav {
+    padding: 20px;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #777;
+  }
+  
+  /* Responsive design for mobile devices */
+  @media (max-width: 768px) {
+    .header {
+      padding: 15px;
+    }
+  
+    .menu-icon {
+      display: block;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+  
+    .menu-icon div {
+      width: 50px;
+      height: 8px;
+      border-radius: 4px;
+      background-color: white;
+      margin: 10px 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+  
+    .toMiddle .bar1 {
+      transform: translateY(18px);
+    }
+  
+    .toMiddle .bar3 {
+      transform: translateY(-18px);
+    }
+  
+    .fadeOut .bar2 {
+      opacity: 0;
+    }
+  
+    .toX .bar1 {
+      transform: translateY(18px) rotate(45deg);
+    }
+  
+    .toX .bar3 {
+      transform: translateY(-18px) rotate(-45deg);
+    }
+  
+    .navbar {
+      display: none;
+    }
+  
+    .sidebar {
+      width: 200px;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  }
+  
+  .main-content {
+    height: auto;
+    background: linear-gradient(to top, #000000, #160116);
+    padding: 40px;
+    max-width: 100%;
+    min-height: 100vh;
+    border-style: border-box;
+  }
+  
+  /* CSS for Accordion */
+  h1 {
+    color: white;
+  }
+  
+  p {
+    color: #ccc;
+  }
+  
+  .accordion {
+    height: 90vh;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-wrap: nowrap;/* Verhindert das Umbruchverhalten */
+    overflow: hidden;
+  }
+  
+  .accordion-element {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    transition: flex-grow 0.3s ease-in-out;
+    border-right: 1px solid #ccc;
+  }
+  
+  .preview {
+    flex: none;
+    color: white;
+    width: 5rem;/* Breite der Vorschau fixieren */
+    height: 100%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  
+  .accordion-main-content {
+    flex-grow: 1;
+    display: none;/* Standardmäßig nicht angezeigt */
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;/* Beinhaltet Padding und Border im Width */
+    transition: display none 1s;
+  }
+  
+  .active .accordion-main-content {
+    display: block;/* Zeigt den Inhalt an, wenn die Klasse 'active' vorhanden ist */
+  }
+  
+  .accordion-number {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 20px;
+  }
+  
+  .accordion-description {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.5rem;
+    border-style: border-box;
+    position: absolute;
+    bottom: 20px;
+    line-height: 5rem;
+  }
+  
+  @media (max-width: 999px) {
+    .accordion {
+      flex-direction: column;/* Richtung der Flexbox ändern */
+      height: auto;
+      width: 100%;
+    }
+  
+    .accordion-element {
+      flex-direction: column;/* Elemente sollen untereinander angeordnet werden */
+      border-right: none;/* Entferne die seitliche Border */
+      border-bottom: 1px solid #ccc;/* Füge eine untere Border hinzu */
+    }
+  
+    .preview {
+      width: 100%;/* Breite auf volle Container-Breite setzen */
+      height: 5rem;/* Höhe der Vorschau fixieren */
+    }
+  
+    .accordion-number {
+      line-height: 5rem;
+      position: absolute;
+      left: 20px;
+      top: auto;/* Positionierung zurücksetzen */
+    }
+  
+    .accordion-description {
+      line-height: 5rem;
+      writing-mode: horizontal-tb;/* Schriftausrichtung anpassen */
+      transform: none;/* Transformierung rückgängig machen */
+      position: absolute;
+      bottom: auto;/* Positionierung zurücksetzen */
+      right: 20px;
+    }
+  
+    .accordion-main-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+    }
+  
+    .active .accordion-main-content {
+      max-height: 1000px; /* Eine großzügige Schätzung, bitte anpassen */
+      opacity: 1;
+      transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+    }
+
+    .imageContainer {
+        position: relative;
+        top: 30vh;
+        z-index: 5;
+    }
+  }

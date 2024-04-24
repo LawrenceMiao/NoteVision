@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
-    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="./postupload.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <main>
         <h1>Uploaded image:</h1>
-        <h1>YAYAYAAYY</h1>
         <div id="imageContainer"></div>
 
         <script>
@@ -74,6 +73,82 @@
                 };
             }
         </script>
+
+        <div class="container">
+            <header class="header">
+                <div class="logo">Logo</div>
+                <nav class="navbar">
+                    <a href="#">Home</a>
+                    <a href="#">About us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </header>
+
+            <aside class="sidebar" id="sidebar">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <!-- Here comes the main content of the website -->
+                <div class="accordion">
+                    <!-- Accordion Element 1 -->
+                    <div class="accordion-element active">
+                        <div class="preview">
+                            <div class="accordion-number"><span>01</span></div>
+                            <div class="accordion-description"><span>PROJECT 1</span></div>
+                        </div>
+                        <div class="accordion-main-content" style="flex-grow: 1;">
+                            <h1>Project 1</h1>
+                            <p>Project 1 is presented here.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Element 2 -->
+                    <div class="accordion-element">
+                        <div class="preview">
+                            <div class="accordion-number"><span>02</span></div>
+                            <div class="accordion-description"><span>PROJECT 2</span></div>
+                        </div>
+                        <div class="accordion-main-content">
+                            <h1>Project 2</h1>
+                            <p>Project 2 is presented here.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Element 3 -->
+                    <div class="accordion-element">
+                        <div class="preview">
+                            <div class="accordion-number"><span>03</span></div>
+                            <div class="accordion-description"><span>PROJECT 3</span></div>
+                        </div>
+                        <div class="accordion-main-content">
+                            <h1>Project 3</h1>
+                            <p>Project 3 is presented here.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Element 4 -->
+                    <div class="accordion-element">
+                        <div class="preview">
+                            <div class="accordion-number"><span>04</span></div>
+                            <div class="accordion-description"><span>PROJECT 4</span></div>
+                        </div>
+                        <div class="accordion-main-content">
+                            <h1>Project 4</h1>
+                            <p>Project 4 is presented here.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
 
     </main>
     <!-- <script src="index.js"></script> -->
