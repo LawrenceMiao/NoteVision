@@ -13,6 +13,7 @@
 <body>
     <main>
         <h1>Uploaded image:</h1>
+        <h1>YAYAYAAYY</h1>
         <div id="imageContainer"></div>
 
         <script>
@@ -23,40 +24,53 @@
                 const imageUrlForPhoto = "/uploads/" + imageUrl;
                 console.log(imageUrl);
 
-                // make image element
+                // Create an image element
                 const img = document.createElement('img');
                 img.src = imageUrlForPhoto;
 
-                // when image loads, perform black and white conversion
+                // When the image loads, perform black and white conversion
                 img.onload = function () {
-                    // create a canvas element and set dimensions
+                    // Create a canvas element
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-                    // get image data from the canvas
-                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    // Set the desired width and height for the scaled image
+                    const scaledWidth = img.width / 4; // Set the desired width here
+                    const scaledHeight = img.height / 4; // Set the desired height here
+
+                    // Set the dimensions of the canvas to match the scaled image
+                    canvas.width = scaledWidth;
+                    canvas.height = scaledHeight;
+
+                    // Draw the scaled image onto the canvas
+                    ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+
+                    // Get the image data from the canvas
+                    const imageData = ctx.getImageData(0, 0, scaledWidth, scaledHeight);
                     const data = imageData.data;
 
                     for (let i = 0; i < data.length; i += 4) {
-                        // calculate grayscale value
+                        // Calculate grayscale value
                         const grayscale = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
 
-                        // set red, green, and blue channels to the grayscale value
+                        // Set red, green, and blue channels to the grayscale value
                         data[i] = grayscale;     // R
                         data[i + 1] = grayscale; // G
                         data[i + 2] = grayscale; // B
                     }
 
-                    // put modified image data back onto the canvas
+                    // Put the modified image data back onto the canvas
                     ctx.putImageData(imageData, 0, 0);
 
-                    // set the source of the image element to the canvas data URL and append
-                    img.src = canvas.toDataURL();
+                    // Create a new image element to hold the modified image
+                    const newImg = new Image();
+
+                    // Set the source of the new image element to the canvas data URL
+                    newImg.src = canvas.toDataURL();
+
+                    // Append the new image element to the image container
                     const imageContainer = document.getElementById('imageContainer');
-                    imageContainer.appendChild(img);
+                    imageContainer.appendChild(newImg);
                 };
             }
         </script>
