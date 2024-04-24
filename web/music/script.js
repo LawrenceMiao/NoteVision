@@ -22,24 +22,12 @@ function displayPopup(message) {
   const popupOverlay = document.getElementById('popupOverlay');
   const popupMessage = document.getElementById('popupMessage');
   popupMessage.innerText = message;
-  popupMessage.style.display = 'flex';
   popupOverlay.style.display = 'flex';
 
   const closePopup = document.getElementById('closePopup');
   closePopup.addEventListener('click', () => {
     popupOverlay.style.display = 'none';
   });
-}
-
-
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function myAsyncFunction() {
-  console.log('Start');
-  await wait(30000); // Wait for 3 seconds
-  console.log('End');
 }
 
 // Check and make sure the only files being submitted are image files.
