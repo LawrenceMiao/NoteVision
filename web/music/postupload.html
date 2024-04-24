@@ -34,8 +34,8 @@
                     const ctx = canvas.getContext('2d');
 
                     // Set the desired width and height for the scaled image
-                    const scaledWidth = img.width / 4; // Set the desired width here
-                    const scaledHeight = img.height / 4; // Set the desired height here
+                    const scaledWidth = img.width / 2; // Set the desired width here
+                    const scaledHeight = img.height / 2; // Set the desired height here
 
                     // Set the dimensions of the canvas to match the scaled image
                     canvas.width = scaledWidth;
@@ -66,6 +66,11 @@
 
                     // Set the source of the new image element to the canvas data URL
                     newImg.src = canvas.toDataURL();
+
+                    newImg.style.position = 'absolute';
+                    newImg.style.top = '50%';
+                    newImg.style.left = '50%';
+                    newImg.style.transform = 'translate(-10%, 0%)';
 
                     // Append the new image element to the image container
                     const imageContainer = document.getElementById('imageContainer');
@@ -110,7 +115,6 @@
                         </div>
                         <div class="accordion-main-content" style="flex-grow: 1;">
                             <h1>Project 1</h1>
-                            <p>Project 1 is presented here.</p>
                         </div>
                     </div>
                     <!-- Accordion Element 2 -->
