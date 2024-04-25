@@ -28,20 +28,20 @@ def invert(binary_img):
 
 # utility to rotate image with specified degree
 def rotate(img, angle):
-    angle = 20
 
     height, width = img.shape[:2]
 
     rotation_matrix = cv2.getRotationMatrix2D((width / 2, height / 2), angle, 1)
 
-    return cv2.warpAffine(image, rotation_matrix, (width, height))
+    return cv2.warpAffine(img, rotation_matrix, (width, height))
 
 
-file = "sample3.png"
+file = "sample1.png"
 
 if __name__ == "__main__":
 
     image = cv2.imread(file, cv2.IMREAD_GRAYSCALE)
+    image = rotate(image, 2)
 
     _, binary_image = cv2.threshold(image, 200, 255, cv2.THRESH_BINARY_INV)
 
