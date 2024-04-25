@@ -1,3 +1,10 @@
+"""
+We need a way to normalize the orientation of sheet music such that the barlines 
+and ledger lines are vertically and horizontally aligned. To do this, we simply 
+choose a roated orientation of the image such that the count of edges from the 
+horizontal and vertical sobel operators is maximized. 
+"""
+
 import cv2
 import numpy as np
 import music_noise
