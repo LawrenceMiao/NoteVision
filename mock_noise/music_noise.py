@@ -9,6 +9,20 @@ def resize(img, scale):
     return cv2.resize(image, (new_width, new_height))
 
 
+def dot_noise(binary_img, num_pixels):
+    for _ in range(num_pixels):
+        x = random.randint(0, binary_img.shape[1] - 1)
+        y = random.randint(0, binary_img.shape[0] - 1)
+
+        if binary_img[y, x] == 255:
+            binary_img[y, x] = 0
+    return binary_img
+
+
+def invert(binary_img):
+    return cv2.bitwise_not(binary_img)
+
+
 def rotate(img, angle):
     angle = 20
 
@@ -20,14 +34,20 @@ def rotate(img, angle):
 
 
 image = cv2.imread("sample1.png", cv2.IMREAD_GRAYSCALE)
-# image = resize(image, 2)
 
 _, binary_image = cv2.threshold(image, 200, 255, cv2.THRESH_BINARY)
 
-superimposed_image = cv2.bitwise_or(binary_image, image)
-
-
 edges = cv2.Canny(binary_image, 100, 200)
+edges = invert(edges)
+
+binary_image = invert(binary_image)
+
+edges = dot_noise(edges, 1000)
+
+
+superimposed_image = cv2.bitwise_or(binary_image, edges)
+
+
 # cv2.imshow("Binary Image", binary_image)
 cv2.imshow("Detected Edges", superimposed_image)
 
